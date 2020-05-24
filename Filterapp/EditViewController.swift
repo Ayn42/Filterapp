@@ -10,27 +10,27 @@ import UIKit
 
 class EditViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var cameraimageView: UIImageView!
     @IBOutlet weak var roshutuSlider: UISlider!
     @IBOutlet weak var roshutuLabel: UILabel!
     @IBOutlet weak var highlightSlider: UISlider!
     @IBOutlet weak var highlightLabel: UILabel!
     @IBOutlet weak var saidoSlider: UISlider!
     @IBOutlet weak var saidoLabel: UILabel!
-
     
-    
-    
+    private var imageView = UIImage()
     private var ciFilter: CIFilter!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        cameraimageView.image = self.cameraImageView
         title = "露出"
 
         guard let uiImage = UIImage(named: "sample"), let ciImage = uiImage.ciImage ?? CIImage(image: uiImage) else { return }
 
-        imageView.image = uiImage
+        cameraimageView.image = uiImage
 
         // Filterに合わせた最大値、最小値、初期値の設定
         roshutuSlider.maximumValue = 3
@@ -45,12 +45,11 @@ class EditViewController: UIViewController {
         // 入力画像の設定
         ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
         
-        
         title = "ハイライト"
 
         guard let _ = UIImage(named: "sample"), let _ = uiImage.ciImage ?? CIImage(image: uiImage) else { return }
 
-        imageView.image = uiImage
+        cameraimageView.image = uiImage
 
         // Filterに合わせた最大値、最小値、初期値の設定
         highlightSlider.maximumValue = 1
@@ -70,7 +69,7 @@ class EditViewController: UIViewController {
 
         guard let _ = UIImage(named: "sample"), let _ = uiImage.ciImage ?? CIImage(image: uiImage) else { return }
 
-        imageView.image = uiImage
+        cameraimageView.image = uiImage
 
         // Filterに合わせた最大値、最小値、初期値の設定
         saidoSlider.maximumValue = 2
@@ -94,7 +93,7 @@ class EditViewController: UIViewController {
 
         // Filter適応後の画像を表示
         if let filteredImage = ciFilter.outputImage {
-            imageView.image = UIImage(ciImage: filteredImage)
+            cameraimageView.image = UIImage(ciImage: filteredImage)
         }
     }
    
@@ -107,7 +106,7 @@ class EditViewController: UIViewController {
 
             // Filter適応後の画像を表示
             if let filteredImage = ciFilter.outputImage {
-                imageView.image = UIImage(ciImage: filteredImage)
+                cameraimageView.image = UIImage(ciImage: filteredImage)
             }
         }
     @IBAction func valueChanged3(_ sender: UISlider) {
@@ -118,8 +117,16 @@ class EditViewController: UIViewController {
 
            // Filter適応後の画像を表示
            if let filteredImage = ciFilter.outputImage {
-               imageView.image = UIImage(ciImage: filteredImage)
+               
+           cameraimageView.image = UIImage(ciImage: filteredImage)
           }
        }
+    
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func savePhoto(){
+        UIImageWriteToSavedPhotosAlbum(cameraimageView.image!, nil, nil, nil)
+    }
+}
 

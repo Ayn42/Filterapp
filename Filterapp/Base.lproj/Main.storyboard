@@ -15,23 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="背景画像.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZi-eN-tGo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGS-HB-DYl">
                                 <rect key="frame" x="100" y="579" width="175" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="編集を始める">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Start Edit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="openAlbum" destination="BYZ-38-t0r" eventType="touchUpInside" id="oDR-yj-3fJ"/>
                                     <segue destination="L9W-cA-16r" kind="presentation" modalPresentationStyle="fullScreen" id="Jf9-e7-QkK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u46-lK-30C">
-                                <rect key="frame" x="0.0" y="102" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="153" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -56,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-x9-ZZg">
-                                <rect key="frame" x="268" y="44" width="91" height="43"/>
+                                <rect key="frame" x="268" y="40" width="91" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save">
@@ -67,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGG-5q-e0u">
-                                <rect key="frame" x="58" y="641" width="90" height="85"/>
+                                <rect key="frame" x="60" y="619" width="90" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -75,11 +79,11 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Jvx-X9-fGb" kind="presentation" modalPresentationStyle="fullScreen" id="wnb-OP-Iz3"/>
+                                    <segue destination="Jvx-X9-fGb" kind="presentation" identifier="toFilterViewController" modalPresentationStyle="fullScreen" id="wnb-OP-Iz3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mow-Ns-03c">
-                                <rect key="frame" x="228" y="641" width="86" height="85"/>
+                                <rect key="frame" x="245" y="619" width="86" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -91,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgO-VY-5yr">
-                                <rect key="frame" x="16" y="45" width="65" height="40"/>
+                                <rect key="frame" x="155" y="738" width="65" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Album">
@@ -99,6 +103,17 @@
                                 </state>
                                 <connections>
                                     <action selector="openAlbum" destination="L9W-cA-16r" eventType="touchUpInside" id="t0S-to-nqr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJp-IB-SqI">
+                                <rect key="frame" x="16" y="40" width="54" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="L9W-cA-16r" eventType="touchUpInside" id="AHH-uG-7bl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gp5-O0-2AT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="117"/>
+            <point key="canvasLocation" x="1000.8" y="116.74876847290641"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="uiT-Fm-lCB">
@@ -150,15 +165,43 @@
                                 <state key="normal" title="F 1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="colorFilter" destination="Jvx-X9-fGb" eventType="touchUpInside" id="DDT-vG-z8e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwa-pJ-FCR">
+                                <rect key="frame" x="17" y="39" width="54" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="Jvx-X9-fGb" eventType="touchUpInside" id="YKp-ZT-PE1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3L-ze-NtJ">
+                                <rect key="frame" x="305" y="39" width="54" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePhoto" destination="Jvx-X9-fGb" eventType="touchUpInside" id="8HD-u4-SBI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uBN-ks-hXB"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraImageView" destination="YH6-ih-9X4" id="WFS-oD-MbU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFU-1e-STc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888.8" y="428.57142857142861"/>
+            <point key="canvasLocation" x="1793" y="-279"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="ur8-Xw-ycc">
@@ -223,6 +266,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="back" destination="6vR-kX-cKi" eventType="touchUpInside" id="dAs-G5-8Cj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-td-zjj">
                                 <rect key="frame" x="294" y="38" width="54" height="42"/>
@@ -231,15 +277,18 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePhoto" destination="6vR-kX-cKi" eventType="touchUpInside" id="n4K-W6-b3i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lJX-Zf-3xb"/>
                     </view>
                     <connections>
+                        <outlet property="cameraimageView" destination="f2k-m6-063" id="1aI-uJ-rIz"/>
                         <outlet property="highlightLabel" destination="AWh-pD-lwA" id="3Pf-Ej-VTy"/>
                         <outlet property="highlightSlider" destination="vZl-Lg-8LW" id="UHW-wq-Kqi"/>
-                        <outlet property="imageView" destination="f2k-m6-063" id="ge3-43-7cg"/>
                         <outlet property="roshutuLabel" destination="Yql-X8-RHV" id="3Xa-sw-hA3"/>
                         <outlet property="roshutuSlider" destination="7WM-UA-tYc" id="fIg-kX-wsY"/>
                         <outlet property="saidoLabel" destination="4zz-4w-RSV" id="xyp-3g-bh8"/>
@@ -248,7 +297,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEp-8M-enQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888.8" y="-254.18719211822662"/>
+            <point key="canvasLocation" x="1793" y="437"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="背景画像.png" width="1024" height="1820"/>
+    </resources>
 </document>

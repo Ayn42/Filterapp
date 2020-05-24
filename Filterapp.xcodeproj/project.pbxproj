@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF56745A247ABDBB0093011E /* 背景画像.png in Resources */ = {isa = PBXBuildFile; fileRef = EF567459247ABDBA0093011E /* 背景画像.png */; };
 		EF62012724741F9900CC363B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012624741F9900CC363B /* AppDelegate.swift */; };
 		EF62012924741F9900CC363B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012824741F9900CC363B /* SceneDelegate.swift */; };
 		EF62012B24741F9900CC363B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012A24741F9900CC363B /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF567459247ABDBA0093011E /* 背景画像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景画像.png"; sourceTree = "<group>"; };
 		EF62012324741F9900CC363B /* Filterapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filterapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF62012624741F9900CC363B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF62012824741F9900CC363B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		EF62012524741F9900CC363B /* Filterapp */ = {
 			isa = PBXGroup;
 			children = (
+				EF567459247ABDBA0093011E /* 背景画像.png */,
 				EF62012624741F9900CC363B /* AppDelegate.swift */,
 				EF62012824741F9900CC363B /* SceneDelegate.swift */,
 				EF62012A24741F9900CC363B /* ViewController.swift */,
@@ -344,6 +347,7 @@
 				EFDE74F32478CA2C009C72EB /* Icon-App-29x29@3x.png in Resources */,
 				EFDE74F52478CA2C009C72EB /* Icon-App-60x60@3x.png in Resources */,
 				EFDE74E92478CA2C009C72EB /* iTunesArtwork@1x.png in Resources */,
+				EF56745A247ABDBB0093011E /* 背景画像.png in Resources */,
 				EFDE74F82478CA2C009C72EB /* Icon-App-40x40@3x.png in Resources */,
 				EF62012E24741F9900CC363B /* Main.storyboard in Resources */,
 				EFDE74EB2478CA2C009C72EB /* Icon-App-29x29@1x.png in Resources */,

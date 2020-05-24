@@ -23,12 +23,7 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    
+ 
     
     //カメラ、カメラロールを使った時に選択した画像をアプリ内に表示するためのメソッド
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
@@ -58,7 +53,21 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                  picker.allowsEditing = true
                  
                  present(picker, animated: true, completion: nil)
+                performSegueToEdit()
              }
          }
+    func performSegueToEdit(){
+        performSegue(withIdentifier: "toEditViewController", sender: nil)
+    }
     
+    @IBAction func back(){
+          self.dismiss(animated: true, completion: nil)
+      }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditViewController"{
+            let EditViewController:  EditViewController = segue.destination as! EditViewController
+        EditViewController.cameraimageView = self.cameraImageView
+        }
+    }
 }
