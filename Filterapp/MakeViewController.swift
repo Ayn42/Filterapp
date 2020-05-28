@@ -54,20 +54,32 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                  
                  present(picker, animated: true, completion: nil)
                 performSegueToEdit()
+                performsegueToFilter()
              }
          }
     func performSegueToEdit(){
         performSegue(withIdentifier: "toEditViewController", sender: nil)
     }
+    func performsegueToFilter(){
+        performSegue(withIdentifier: "toFilterViewController", sender: nil)
+    }
+    
     
     @IBAction func back(){
           self.dismiss(animated: true, completion: nil)
       }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
         if segue.identifier == "toEditViewController"{
             let EditViewController:  EditViewController = segue.destination as! EditViewController
-        EditViewController.cameraimageView = self.cameraImageView
+        
+            EditViewController.originalImage = self.originalImage
+            
+        }else if segue.identifier == "toFilterViewController"{
+            let FilterViewController:  FilterViewController = segue.destination as! FilterViewController
+            
+            FilterViewController.originalImage = self.originalImage
         }
     }
 }

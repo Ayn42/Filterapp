@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -149,6 +149,9 @@
                                 <state key="normal" title="F 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="Filter2" destination="Jvx-X9-fGb" eventType="touchUpInside" id="Yaq-1b-sYz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8du-ss-1sI">
                                 <rect key="frame" x="298" y="668" width="39" height="46"/>
@@ -157,6 +160,9 @@
                                 <state key="normal" title="F 3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="Filter3" destination="Jvx-X9-fGb" eventType="touchUpInside" id="iJw-Nw-SGn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNz-Bi-A6M">
                                 <rect key="frame" x="53" y="668" width="37" height="48"/>
@@ -166,7 +172,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="colorFilter" destination="Jvx-X9-fGb" eventType="touchUpInside" id="DDT-vG-z8e"/>
+                                    <action selector="Filter1" destination="Jvx-X9-fGb" eventType="touchUpInside" id="EnM-sd-eSX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwa-pJ-FCR">
@@ -234,7 +240,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Brightness"/>
                                 <connections>
-                                    <action selector="valueChanged2:" destination="6vR-kX-cKi" eventType="touchUpInside" id="ZUB-po-vWA"/>
+                                    <action selector="valueChanged2:" destination="6vR-kX-cKi" eventType="touchUpInside" id="LSn-6g-Slp"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="露出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yql-X8-RHV">
@@ -288,7 +294,7 @@
                     <connections>
                         <outlet property="cameraimageView" destination="f2k-m6-063" id="1aI-uJ-rIz"/>
                         <outlet property="highlightLabel" destination="AWh-pD-lwA" id="3Pf-Ej-VTy"/>
-                        <outlet property="highlightSlider" destination="vZl-Lg-8LW" id="UHW-wq-Kqi"/>
+                        <outlet property="highlightSlider" destination="vZl-Lg-8LW" id="eeN-Mj-6H1"/>
                         <outlet property="roshutuLabel" destination="Yql-X8-RHV" id="3Xa-sw-hA3"/>
                         <outlet property="roshutuSlider" destination="7WM-UA-tYc" id="fIg-kX-wsY"/>
                         <outlet property="saidoLabel" destination="4zz-4w-RSV" id="xyp-3g-bh8"/>
