@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreImage
+import DKImagePickerController
 
 class EditViewController: UIViewController {
 
@@ -18,69 +20,102 @@ class EditViewController: UIViewController {
     @IBOutlet weak var saidoSlider: UISlider!
     @IBOutlet weak var saidoLabel: UILabel!
     
-    var originalImage : UIImage!
+    var originalImage : UIImage! = UIImage()
+    let images = UIImage(named: "originalImage")
     private var ciFilter: CIFilter!
+    private var ciFilter2: CIFilter!
+    private var ciFilter3: CIFilter!
+    var context : CIContext!
+    var context2 : CIContext!
+    var context3 : CIContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cameraimageView.image = originalImage
-        
-        title = "ハイライト"
-
-        guard let uiImage = UIImage(named: "originalImage"), let ciImage = originalImage ?? CIImage(image: uiImage) else { return }
-
-        cameraimageView.image = originalImage
-
-        // Filterに合わせた最大値、最小値、初期値の設定
-        highlightSlider.maximumValue = 1
-        highlightSlider.minimumValue = 0
-        highlightSlider.value = 1
-
-        highlightLabel.text = String(highlightSlider.value)
-
-        // CIFilterの生成
-        ciFilter = CIFilter(name: "CIHighlightShadowAdjust")
-
-        // 入力画像の設定
-        ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
-        
+         cameraimageView.image = originalImage
     }
+    //画面表示された直後に呼び出される、毎回呼び出される
+        override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        cameraimageView.image = originalImage
 
+   guard let ciImage = originalImage.ciImage ?? CIImage(image: originalImage) else { return }
+
+
+         //ハイライトのスライダー
+         highlightSlider.maximumValue = 1
+         highlightSlider.minimumValue = 0
+         highlightSlider.value = 1
+            
+        //露出のスライダー
+        roshutuSlider.maximumValue = 3
+        roshutuSlider.minimumValue = -3
+        roshutuSlider.value = 0
+            
+        //彩度のスライダー
+        saidoSlider.maximumValue = 2
+        saidoSlider.minimumValue = 0
+        saidoSlider.value = 1
+
+
+         highlightLabel.text = String(highlightSlider.value)
+         roshutuLabel.text = String(roshutuSlider.value)
+         saidoLabel.text = String(saidoSlider.value)
+            
+         // CIFilterの生成
+         ciFilter = CIFilter(name: "CIHighlightShadowAdjust")
+         ciFilter2 = CIFilter(name: "CIExposureAdjust")
+         ciFilter3 = CIFilter(name: "CIColorControls")
+        
+         context = CIContext()
+         context2 = CIContext()
+         context3 = CIContext()
+
+         // 入力画像の設定
+         ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
+         ciFilter2.setValue(ciImage, forKey: kCIInputImageKey)
+         ciFilter3.setValue(ciImage, forKey: kCIInputImageKey)
+     }
+    
     @IBAction func valueChanged(_ sender: UISlider) {
+        
         roshutuLabel.text = String(sender.value)
 
         // 露出の設定
-        ciFilter.setValue(sender.value, forKey: "inputEV")
+        ciFilter2.setValue(sender.value, forKey: "inputEV")
 
         // Filter適応後の画像を表示
-        if let filteredImage = ciFilter.outputImage {
-            cameraimageView.image = UIImage(ciImage: filteredImage)
+        if let originalImage = ciFilter2.outputImage {
+            cameraimageView.image = UIImage(ciImage: originalImage)
         }
     }
-    @IBAction func valueChanged2(_ sender: UISlider) {
-            highlightLabel.text = String(sender.value)
+    
+     @IBAction func valueChanged2(_ sender: UISlider) {
+        
+                highlightLabel.text = String(sender.value)
 
-            // ハイライトの設定
-            ciFilter.setValue(sender.value, forKey: "inputHighlightAmount")
+                // ハイライトの設定
+      ciFilter.setValue(sender.value, forKey: "inputHighlightAmount")
+
+                // Filter適応後の画像を表示
+                if let originalImage = ciFilter.outputImage {
+                    cameraimageView.image = UIImage(ciImage: originalImage)
+                }
+            }
+    
+
+    @IBAction func valueChanged3(_ sender: UISlider) {
+            saidoLabel.text = String(sender.value)
+
+            // 彩度の設定
+            ciFilter3.setValue(sender.value, forKey: "inputSaturation")
 
             // Filter適応後の画像を表示
-            if let originalImage = ciFilter.outputImage {
-                cameraimageView.image = UIImage(ciImage: originalImage)
-            }
+            if let filteredImage = ciFilter3.outputImage {
+                
+            cameraimageView.image = UIImage(ciImage: filteredImage)
+           }
         }
-    @IBAction func valueChanged3(_ sender: UISlider) {
-           saidoLabel.text = String(sender.value)
-
-           // 彩度の設定
-           ciFilter.setValue(sender.value, forKey: "inputSaturation")
-
-           // Filter適応後の画像を表示
-           if let filteredImage = ciFilter.outputImage {
-               
-           cameraimageView.image = UIImage(ciImage: filteredImage)
-          }
-       }
     
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)

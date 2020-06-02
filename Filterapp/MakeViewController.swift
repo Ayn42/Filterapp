@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+import DKImagePickerController
 
 class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -42,21 +44,24 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     //カメラロールにある画像を読み込むメソッド
          @IBAction func openAlbum(){
-             //カメラロールを使えるかの確認
-             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
                  
-                 //カメラロールの画像を選択して画像を表示するまでの一連の流れ
-                 let picker = UIImagePickerController()
-                 picker.sourceType = .photoLibrary
-                 picker.delegate = self
-                 
-                 picker.allowsEditing = true
-                 
-                 present(picker, animated: true, completion: nil)
+                 let pickerController = DKImagePickerController()
+                 // 選択可能な枚数を20にする
+                pickerController.maxSelectableCount = 20
+                pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+                                   
+                // 選択された画像はassetsに入れて返却されるのでfetchして取り出す
+                 for asset in assets {
+                 asset.fetchFullScreenImage(completeBlock: { (image, info) in
+                // ここで取り出せる
+                 self.cameraImageView.image = image
+                    })
+                }
+            }
+               self.present(pickerController, animated: true) {}
                 performSegueToEdit()
                 performsegueToFilter()
              }
-         }
     func performSegueToEdit(){
         performSegue(withIdentifier: "toEditViewController", sender: nil)
     }

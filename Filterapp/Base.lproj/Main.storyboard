@@ -55,10 +55,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AX8-8c-sPX">
-                                <rect key="frame" x="0.0" y="95" width="375" height="463"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-x9-ZZg">
                                 <rect key="frame" x="268" y="40" width="91" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,12 +112,16 @@
                                     <action selector="back" destination="L9W-cA-16r" eventType="touchUpInside" id="AHH-uG-7bl"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8w-bP-Q2V">
+                                <rect key="frame" x="0.0" y="110" width="393" height="472"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xcb-g4-TdY"/>
                     </view>
                     <connections>
-                        <outlet property="cameraImageView" destination="AX8-8c-sPX" id="O1K-Wa-boc"/>
+                        <outlet property="cameraImageView" destination="a8w-bP-Q2V" id="a6G-Pi-WDz"/>
                         <outlet property="editButton" destination="Mow-Ns-03c" id="sBm-9a-Eez"/>
                         <outlet property="filterButton" destination="RGG-5q-e0u" id="qyo-C7-YKX"/>
                     </connections>
@@ -240,7 +240,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Brightness"/>
                                 <connections>
-                                    <action selector="valueChanged2:" destination="6vR-kX-cKi" eventType="touchUpInside" id="LSn-6g-Slp"/>
+                                    <action selector="valueChanged2:" destination="6vR-kX-cKi" eventType="touchUpInside" id="ZZi-qb-CUp"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="露出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yql-X8-RHV">
@@ -294,7 +294,7 @@
                     <connections>
                         <outlet property="cameraimageView" destination="f2k-m6-063" id="1aI-uJ-rIz"/>
                         <outlet property="highlightLabel" destination="AWh-pD-lwA" id="3Pf-Ej-VTy"/>
-                        <outlet property="highlightSlider" destination="vZl-Lg-8LW" id="eeN-Mj-6H1"/>
+                        <outlet property="highlightSlider" destination="vZl-Lg-8LW" id="hui-5e-Kkd"/>
                         <outlet property="roshutuLabel" destination="Yql-X8-RHV" id="3Xa-sw-hA3"/>
                         <outlet property="roshutuSlider" destination="7WM-UA-tYc" id="fIg-kX-wsY"/>
                         <outlet property="saidoLabel" destination="4zz-4w-RSV" id="xyp-3g-bh8"/>
