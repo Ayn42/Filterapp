@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+import DKImagePickerController
 
 class FilterViewController: UIViewController {
     

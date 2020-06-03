@@ -1,0 +1,6 @@
+framework module Pods_Filterapp_FilterappUITests {
+  umbrella header "Pods-Filterapp-FilterappUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

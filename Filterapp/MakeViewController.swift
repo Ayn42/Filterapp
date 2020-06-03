@@ -54,7 +54,7 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                  for asset in assets {
                  asset.fetchFullScreenImage(completeBlock: { (image, info) in
                 // ここで取り出せる
-                 self.cameraImageView.image = image
+                    self.cameraImageView.image = image
                     })
                 }
             }
@@ -79,12 +79,12 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         if segue.identifier == "toEditViewController"{
             let EditViewController:  EditViewController = segue.destination as! EditViewController
         
-            EditViewController.originalImage = self.originalImage
+            EditViewController.originalImage = self.cameraImageView.image
             
         }else if segue.identifier == "toFilterViewController"{
             let FilterViewController:  FilterViewController = segue.destination as! FilterViewController
             
-            FilterViewController.originalImage = self.originalImage
+            FilterViewController.originalImage = self.cameraImageView.image
         }
     }
 }

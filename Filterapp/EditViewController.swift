@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreImage
+import Photos
 import DKImagePickerController
 
 class EditViewController: UIViewController {
@@ -20,7 +21,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var saidoSlider: UISlider!
     @IBOutlet weak var saidoLabel: UILabel!
     
-    var originalImage : UIImage! = UIImage()
+    var originalImage : UIImage!
     let images = UIImage(named: "originalImage")
     private var ciFilter: CIFilter!
     private var ciFilter2: CIFilter!
@@ -36,11 +37,10 @@ class EditViewController: UIViewController {
     //画面表示された直後に呼び出される、毎回呼び出される
         override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+            
+        guard let ciImage = originalImage.ciImage ?? CIImage(image: originalImage) else { return }
+            
         cameraimageView.image = originalImage
-
-   guard let ciImage = originalImage.ciImage ?? CIImage(image: originalImage) else { return }
-
 
          //ハイライトのスライダー
          highlightSlider.maximumValue = 1

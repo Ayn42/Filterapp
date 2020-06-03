@@ -1,0 +1,84 @@
+PODS:
+  - CropViewController (2.5.2)
+  - DKCamera (1.6.7)
+  - DKImagePickerController (4.3.1):
+    - DKImagePickerController/Camera (= 4.3.1)
+    - DKImagePickerController/Core (= 4.3.1)
+    - DKImagePickerController/ImageDataManager (= 4.3.1)
+    - DKImagePickerController/InlineCamera (= 4.3.1)
+    - DKImagePickerController/PhotoEditor (= 4.3.1)
+    - DKImagePickerController/PhotoGallery (= 4.3.1)
+    - DKImagePickerController/Resource (= 4.3.1)
+  - DKImagePickerController/Camera (4.3.1):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/Core (4.3.1):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.3.1)
+  - DKImagePickerController/InlineCamera (4.3.1):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoEditor (4.3.1):
+    - CropViewController (~> 2.5)
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoGallery (4.3.1):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.3.1)
+  - DKPhotoGallery (0.0.15):
+    - DKPhotoGallery/Core (= 0.0.15)
+    - DKPhotoGallery/Model (= 0.0.15)
+    - DKPhotoGallery/Preview (= 0.0.15)
+    - DKPhotoGallery/Resource (= 0.0.15)
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Core (0.0.15):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Model (0.0.15):
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Preview (0.0.15):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - DKPhotoGallery/Resource (0.0.15):
+    - SDWebImage
+    - SDWebImageFLPlugin
+  - FLAnimatedImage (1.0.12)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+  - SDWebImageFLPlugin (0.4.0):
+    - FLAnimatedImage (>= 1.0.11)
+    - SDWebImage/Core (~> 5.6)
+
+DEPENDENCIES:
+  - DKImagePickerController
+
+SPEC REPOS:
+  trunk:
+    - CropViewController
+    - DKCamera
+    - DKImagePickerController
+    - DKPhotoGallery
+    - FLAnimatedImage
+    - SDWebImage
+    - SDWebImageFLPlugin
+
+SPEC CHECKSUMS:
+  CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
+  DKCamera: a902b66921fca14b7a75266feb8c7568aa7caa71
+  DKImagePickerController: f3d397887f38b98276a506b02ed9c167425f7cf3
+  DKPhotoGallery: e880aef16c108333240e1e7327896f2ea380f4f0
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
+
+PODFILE CHECKSUM: f8ea10308f1020e959b02b992da2833d708f8e0e
+
+COCOAPODS: 1.9.3
