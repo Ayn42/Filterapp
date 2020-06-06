@@ -73,9 +73,6 @@ class FilterViewController: UIViewController {
             let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
                  cameraImageView.image = UIImage(cgImage: cgImage!)
     }
-
-    
-    
     
     @IBAction func back(){
         self.dismiss(animated: true, completion: nil)

@@ -10,6 +10,8 @@
 		42573CD460482F3D95721EF0 /* Pods_Filterapp_FilterappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7F15C1AC21C41BF326ABBE /* Pods_Filterapp_FilterappUITests.framework */; };
 		DC6E03C321A3A9A2AD206682 /* Pods_Filterapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3DA3CABBA5EB8C2AE280BD /* Pods_Filterapp.framework */; };
 		EF52F6FF2486ADBE00B49AB2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52F6FE2486ADBE00B49AB2 /* TableViewController.swift */; };
+		EF52F701248A804000B49AB2 /* flower.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF52F700248A804000B49AB2 /* flower.JPG */; };
+		EF52F705248A84E000B49AB2 /* edit2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF52F704248A84E000B49AB2 /* edit2.JPG */; };
 		EF56745A247ABDBB0093011E /* 背景画像.png in Resources */ = {isa = PBXBuildFile; fileRef = EF567459247ABDBA0093011E /* 背景画像.png */; };
 		EF62012724741F9900CC363B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012624741F9900CC363B /* AppDelegate.swift */; };
 		EF62012924741F9900CC363B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012824741F9900CC363B /* SceneDelegate.swift */; };
@@ -73,6 +75,8 @@
 		E7840812EED3CB4A16D6CD02 /* Pods-FilterappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterappTests.release.xcconfig"; path = "Target Support Files/Pods-FilterappTests/Pods-FilterappTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED3DA3CABBA5EB8C2AE280BD /* Pods_Filterapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filterapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF52F6FE2486ADBE00B49AB2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		EF52F700248A804000B49AB2 /* flower.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.JPG; sourceTree = "<group>"; };
+		EF52F704248A84E000B49AB2 /* edit2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = edit2.JPG; sourceTree = "<group>"; };
 		EF567459247ABDBA0093011E /* 背景画像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景画像.png"; sourceTree = "<group>"; };
 		EF62012324741F9900CC363B /* Filterapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filterapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF62012624741F9900CC363B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				EF567459247ABDBA0093011E /* 背景画像.png */,
+				EF52F700248A804000B49AB2 /* flower.JPG */,
+				EF52F704248A84E000B49AB2 /* edit2.JPG */,
 				EF62012624741F9900CC363B /* AppDelegate.swift */,
 				EF62012824741F9900CC363B /* SceneDelegate.swift */,
 				EF62012A24741F9900CC363B /* ViewController.swift */,
@@ -379,7 +385,9 @@
 				EFDE74FC2478CA2C009C72EB /* iTunesArtwork@3x.png in Resources */,
 				EFDE74F92478CA2C009C72EB /* Icon-App-29x29@2x.png in Resources */,
 				EFDE74F42478CA2C009C72EB /* Icon-App-40x40@2x.png in Resources */,
+				EF52F701248A804000B49AB2 /* flower.JPG in Resources */,
 				EFDE74F02478CA2C009C72EB /* ItunesArtwork@2x.png in Resources */,
+				EF52F705248A84E000B49AB2 /* edit2.JPG in Resources */,
 				EFDE74FA2478CA2C009C72EB /* README.md in Resources */,
 				EF62013324741F9E00CC363B /* LaunchScreen.storyboard in Resources */,
 				EFDE74EE2478CA2C009C72EB /* Icon-App-83.5x83.5@2x.png in Resources */,

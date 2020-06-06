@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import DKImagePickerController
 
-class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     @IBOutlet var cameraImageView: UIImageView!
     @IBOutlet var filterButton : UIButton!
@@ -37,24 +37,21 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         dismiss(animated: true, completion: nil)
         
     }
-    //撮影した画像を保存するためのメソッド
-    @IBAction func savePhoto(){
-        UIImageWriteToSavedPhotosAlbum(cameraImageView.image!, nil, nil, nil)
-    }
+
     
     //カメラロールにある画像を読み込むメソッド
-         @IBAction func openAlbum(){
+    @IBAction func openAlbum(){
                  
-                 let pickerController = DKImagePickerController()
-                 // 選択可能な枚数を20にする
-                pickerController.maxSelectableCount = 20
-                pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+        let pickerController = DKImagePickerController()
+        // 選択可能な枚数を20にする
+        pickerController.maxSelectableCount = 20
+        pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
                                    
-                // 選択された画像はassetsに入れて返却されるのでfetchして取り出す
-                 for asset in assets {
-                 asset.fetchFullScreenImage(completeBlock: { (image, info) in
-                // ここで取り出せる
-                    self.cameraImageView.image = image
+        // 選択された画像はassetsに入れて返却されるのでfetchして取り出す
+        for asset in assets {
+        asset.fetchFullScreenImage(completeBlock: { (image, info) in
+        // ここで取り出せる
+        self.cameraImageView.image = image
                     })
                 }
             }
