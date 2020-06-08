@@ -27,7 +27,7 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         super.viewDidLoad()
         //UICollectionViewFlowLayoutをインスタンス化
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)//レイアウトを調整
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 5, bottom: 15, right: 5)//レイアウトを調整
         layout.minimumInteritemSpacing = 0
         collectionView.collectionViewLayout = layout
         
@@ -37,8 +37,8 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     //表示するセルの数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           //今回はセルを12個にしてみる
-           return 12
+           //今回はセルを9個にしてみる
+           return 9
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

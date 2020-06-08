@@ -11,7 +11,7 @@ import CoreImage
 import Photos
 import DKImagePickerController
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var cameraimageView: UIImageView!
     @IBOutlet weak var roshutuSlider: UISlider!
@@ -24,6 +24,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var contrustLabel : UILabel!
     @IBOutlet weak var shadowSlider : UISlider!
     @IBOutlet weak var shadowLabel : UILabel!
+    @IBOutlet var collectionView : UICollectionView!
     
     var originalImage : UIImage!
     let images = UIImage(named: "originalImage")
@@ -41,9 +42,40 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          cameraimageView.image = originalImage
+        //UICollectionViewFlowLayoutをインスタンス化
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 5, bottom: 15, right: 5)//レイアウトを調整
+        layout.minimumInteritemSpacing = 0
+        collectionView.collectionViewLayout = layout
+               
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
+    
+    //表示するセルの数
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+              //今回はセルを9個にしてみる
+              return 9
+       }
+       
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+              //表示するCellの登録
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+              //セルの背景色をgrayに
+              cell.backgroundColor = .gray
+
+              return cell
+          }
+       
+    //セルの配置について決める
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+             let horizontalSpace : CGFloat = 10
+             let cellSize : CGFloat = self.view.bounds.width / 3 - horizontalSpace
+             return CGSize(width: cellSize, height: cellSize)
+         }
+    
     //画面表示された直後に呼び出される、毎回呼び出される
-        override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
             
         guard let ciImage = originalImage.ciImage ?? CIImage(image: originalImage) else { return }
