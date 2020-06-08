@@ -10,11 +10,12 @@ import UIKit
 import Photos
 import DKImagePickerController
 
-class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var cameraImageView: UIImageView!
     @IBOutlet var filterButton : UIButton!
     @IBOutlet var editButton : UIButton!
+    @IBOutlet var collectionView : UICollectionView!
     
     //画像加工するための元となる画像
     var originalImage: UIImage!
@@ -24,8 +25,37 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UICollectionViewFlowLayoutをインスタンス化
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)//レイアウトを調整
+        layout.minimumInteritemSpacing = 0
+        collectionView.collectionViewLayout = layout
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
- 
+    
+    //表示するセルの数
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           //今回はセルを12個にしてみる
+           return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+           //表示するCellの登録
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+           //セルの背景色をgrayに
+           cell.backgroundColor = .gray
+
+           return cell
+       }
+    
+    //セルの配置について決める
+      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+          let horizontalSpace : CGFloat = 10
+          let cellSize : CGFloat = self.view.bounds.width / 3 - horizontalSpace
+          return CGSize(width: cellSize, height: cellSize)
+      }
     
     //カメラ、カメラロールを使った時に選択した画像をアプリ内に表示するためのメソッド
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
@@ -59,6 +89,7 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                 performSegueToEdit()
                 performsegueToFilter()
              }
+    
     func performSegueToEdit(){
         performSegue(withIdentifier: "toEditViewController", sender: nil)
     }
