@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		42573CD460482F3D95721EF0 /* Pods_Filterapp_FilterappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7F15C1AC21C41BF326ABBE /* Pods_Filterapp_FilterappUITests.framework */; };
 		DC6E03C321A3A9A2AD206682 /* Pods_Filterapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3DA3CABBA5EB8C2AE280BD /* Pods_Filterapp.framework */; };
-		EF52F6FF2486ADBE00B49AB2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52F6FE2486ADBE00B49AB2 /* TableViewController.swift */; };
 		EF52F701248A804000B49AB2 /* flower.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF52F700248A804000B49AB2 /* flower.JPG */; };
 		EF52F705248A84E000B49AB2 /* edit2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF52F704248A84E000B49AB2 /* edit2.JPG */; };
 		EF56745A247ABDBB0093011E /* 背景画像.png in Resources */ = {isa = PBXBuildFile; fileRef = EF567459247ABDBA0093011E /* 背景画像.png */; };
@@ -23,6 +22,7 @@
 		EF62014924741F9F00CC363B /* FilterappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62014824741F9F00CC363B /* FilterappUITests.swift */; };
 		EF620157247422CE00CC363B /* MakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF620156247422CE00CC363B /* MakeViewController.swift */; };
 		EF620159247650B700CC363B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF620158247650B700CC363B /* EditViewController.swift */; };
+		EFADD2572490D1720047A681 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFADD2562490D1720047A681 /* CollectionViewCell.swift */; };
 		EFDE746F247800F4009C72EB /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE746E247800F4009C72EB /* FilterViewController.swift */; };
 		EFDE74E92478CA2C009C72EB /* iTunesArtwork@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDE74AE2478CA2C009C72EB /* iTunesArtwork@1x.png */; };
 		EFDE74EA2478CA2C009C72EB /* Icon-App-76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDE74B02478CA2C009C72EB /* Icon-App-76x76@2x.png */; };
@@ -74,7 +74,6 @@
 		BA7F15C1AC21C41BF326ABBE /* Pods_Filterapp_FilterappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filterapp_FilterappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7840812EED3CB4A16D6CD02 /* Pods-FilterappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterappTests.release.xcconfig"; path = "Target Support Files/Pods-FilterappTests/Pods-FilterappTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED3DA3CABBA5EB8C2AE280BD /* Pods_Filterapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filterapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF52F6FE2486ADBE00B49AB2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		EF52F700248A804000B49AB2 /* flower.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.JPG; sourceTree = "<group>"; };
 		EF52F704248A84E000B49AB2 /* edit2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = edit2.JPG; sourceTree = "<group>"; };
 		EF567459247ABDBA0093011E /* 背景画像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景画像.png"; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		EF62014A24741F9F00CC363B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF620156247422CE00CC363B /* MakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeViewController.swift; sourceTree = "<group>"; };
 		EF620158247650B700CC363B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		EFADD2562490D1720047A681 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		EFDE746E247800F4009C72EB /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		EFDE74AE2478CA2C009C72EB /* iTunesArtwork@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@1x.png"; sourceTree = "<group>"; };
 		EFDE74B02478CA2C009C72EB /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
@@ -171,7 +171,6 @@
 		EF62011A24741F9900CC363B = {
 			isa = PBXGroup;
 			children = (
-				EF52F6FE2486ADBE00B49AB2 /* TableViewController.swift */,
 				EF62012524741F9900CC363B /* Filterapp */,
 				EF62013C24741F9F00CC363B /* FilterappTests */,
 				EF62014724741F9F00CC363B /* FilterappUITests */,
@@ -208,6 +207,7 @@
 				EF620156247422CE00CC363B /* MakeViewController.swift */,
 				EF620158247650B700CC363B /* EditViewController.swift */,
 				EFDE746E247800F4009C72EB /* FilterViewController.swift */,
+				EFADD2562490D1720047A681 /* CollectionViewCell.swift */,
 			);
 			path = Filterapp;
 			sourceTree = "<group>";
@@ -536,9 +536,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFDE746F247800F4009C72EB /* FilterViewController.swift in Sources */,
-				EF52F6FF2486ADBE00B49AB2 /* TableViewController.swift in Sources */,
 				EF620159247650B700CC363B /* EditViewController.swift in Sources */,
 				EF620157247422CE00CC363B /* MakeViewController.swift in Sources */,
+				EFADD2572490D1720047A681 /* CollectionViewCell.swift in Sources */,
 				EF62012B24741F9900CC363B /* ViewController.swift in Sources */,
 				EF62012724741F9900CC363B /* AppDelegate.swift in Sources */,
 				EF62012924741F9900CC363B /* SceneDelegate.swift in Sources */,

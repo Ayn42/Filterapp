@@ -43,10 +43,12 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            //表示するCellの登録
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MyCustomCell
            //セルの背景色をgrayに
            cell.backgroundColor = .gray
 
+          cell.cameraImageView.image = originalImage
+        
            return cell
        }
     
