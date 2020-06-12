@@ -44,8 +44,17 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            //表示するCellの登録
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MyCustomCell
+          //Tag番号を使ってImageViewのインスタンスを作成
+          //let imageView = cell.contentView.viewWithTag(1)as! UIImageView
+           
            //セルの背景色をgrayに
-           cell.backgroundColor = .gray
+           //cell.backgroundColor = .gray
+        
+        //画像配列の番号で指定された要素の名前の画像をUIImageとする
+         //let cellImage = UIImage(named: originalImage)
+        
+          //UIImageをUIImageViewのImageとして設定
+          //imageView.image = originalImage
 
           cell.cameraImageView.image = originalImage
         
@@ -69,14 +78,13 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         dismiss(animated: true, completion: nil)
         
     }
-
     
     //カメラロールにある画像を読み込むメソッド
     @IBAction func openAlbum(){
                  
         let pickerController = DKImagePickerController()
-        // 選択可能な枚数を20にする
-        pickerController.maxSelectableCount = 20
+        // 選択可能な枚数を9にする
+        pickerController.maxSelectableCount = 9
         pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
                                    
         // 選択された画像はassetsに入れて返却されるのでfetchして取り出す
