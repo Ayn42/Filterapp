@@ -48,7 +48,7 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
           //let imageView = cell.contentView.viewWithTag(1)as! UIImageView
            
            //セルの背景色をgrayに
-           //cell.backgroundColor = .gray
+           cell.backgroundColor = .gray
         
         //画像配列の番号で指定された要素の名前の画像をUIImageとする
          //let cellImage = UIImage(named: originalImage)
