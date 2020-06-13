@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import DKImagePickerController
 
-class MyCustomCell: UICollectionViewCell {
+class MyCustomCell: UICollectionViewCell, UIImagePickerControllerDelegate {
     @IBOutlet weak var cameraImageView: UIImageView!
+    var originalImage: UIImage!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    //override func setSelected(_ selected:Bool, animated: Bool){
+        //super.setSelected(selected, animated: animated)}
 }
 

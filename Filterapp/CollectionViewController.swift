@@ -44,7 +44,7 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         
-        let nowIndexPathDictionary = imageArray[indexPath.row]
+        //let nowIndexPath = imageArray[indexPath.row]
 
         return cell
     }
