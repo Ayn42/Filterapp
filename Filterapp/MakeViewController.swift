@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import DKImagePickerController
 
-class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MakeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //@IBOutlet var cameraImageView : UIImageView!
     @IBOutlet var filterButton : UIButton!
@@ -19,45 +19,38 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     private let reuseIdentifier = "Cell"
     
     var imageArray : [UIImage] = [UIImage]()
-    let saveData = UserDefaults.standard
+    //let saveData = UserDefaults.standard
 
     //画像加工するための元となる画像
-    var originalImage: UIImage!
+    //var originalImage: UIImage!
     //画像加工するフィルターの宣言
-    var filter: CIFilter!
+    //var filter: CIFilter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //imageArrayに写真を入れていく
-        imageArray = [UIImage]()
         
         //UICollectionViewFlowLayoutをインスタンス化
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 15, left: 5, bottom: 15, right: 5)//レイアウトを調整
         layout.minimumInteritemSpacing = 0
         collectionView.collectionViewLayout = layout
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
-   override  func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewWillAppear(_ animated: Bool){
-        super.viewWillAppear(true)
-        if saveData.array(forKey: "Image") != nil{
-            imageArray = saveData.array(forKey: "Image")as![UIImage]
-        }
-        collectionView.reloadData()
-    }
+    //override func viewWillAppear(_ animated: Bool){
+        //super.viewWillAppear(true)
+        //if saveData.array(forKey: "Image") != nil{
+          //  imageArray = saveData.array(forKey: "Image")as![UIImage]
+        //}
+        //collectionView.reloadData()
+    //}
     //セクション数を指定します
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-           return 1
-       }
+    //func numberOfSections(in collectionView: UICollectionView) -> Int {
+           //return 1
+       //}
     
     //セルの個数を指定します
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -69,10 +62,8 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MyCustomCell
         
        // let nowIndexPathDictionary = imageArray[indexPath.row]
-           
            //セルの背景色をgrayに
            //cell.backgroundColor = .gray
-
           //cell.cameraImageView.image = originalImage
         
           cell.cameraImageView.image = imageArray[indexPath.row]
@@ -90,21 +81,28 @@ class MakeViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     //カメラロールにある画像を読み込むメソッド
     @IBAction func openAlbum(){
                  
-        let MyCustomCell = DKImagePickerController()
+        let pickerController = DKImagePickerController()
         // 選択可能な枚数を9にする
-        MyCustomCell.maxSelectableCount = 9
-        MyCustomCell.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+        pickerController.maxSelectableCount = 9
+        pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+            self.imageArray.removeAll()
                                    
         // 選択された画像はassetsに入れて返却されるのでfetchして取り出す
         for asset in assets {
         asset.fetchFullScreenImage(completeBlock: { (image, info) in
         // ここで取り出せる
         //self.cameraImageView.image = image
-            
+        //imageがnilの場合は早期リターン
+            guard let appendImage = image else{
+                return
+            }
+            //配列imageArrayに選択した画像を追加しcollectionViewをリロードして追加した画像を表示させる
+            self.imageArray.append(appendImage)
+            self.collectionView.reloadData()
                     })
                 }
             }
-               self.present(MyCustomCell, animated: true) {}
+               self.present(pickerController, animated: true) {}
              }
     
     func performSegueToEdit(){

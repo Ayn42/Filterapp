@@ -9,9 +9,9 @@
 import UIKit
 import DKImagePickerController
 
-class MyCustomCell: UICollectionViewCell, UIImagePickerControllerDelegate {
+class MyCustomCell: UICollectionViewCell {
     @IBOutlet weak var cameraImageView: UIImageView!
-    var originalImage: UIImage!
+    //var originalImage: UIImage!
     
     override func awakeFromNib() {
         super.awakeFromNib()
