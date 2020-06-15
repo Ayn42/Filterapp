@@ -13,7 +13,7 @@ import DKImagePickerController
 
 class EditViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var cameraimageView: UIImageView!
+    //@IBOutlet weak var cameraimageView: UIImageView!
     @IBOutlet weak var roshutuSlider: UISlider!
     @IBOutlet weak var roshutuLabel: UILabel!
     @IBOutlet weak var highlightSlider: UISlider!
@@ -25,23 +25,35 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     @IBOutlet weak var shadowSlider : UISlider!
     @IBOutlet weak var shadowLabel : UILabel!
     @IBOutlet var collectionView : UICollectionView!
+    private let reuseIdentifier = "Cell"
     
-    var originalImage : UIImage!
-    let images = UIImage(named: "originalImage")
+    //var originalImage : UIImage!
+    //let images = UIImage(named: "originalImage")
+    var imageArray : [UIImage] = [UIImage]()
+    var ciImageArray : [CIImage] = [CIImage]()
+    let images = UIImage(named: "imageArray")
+
     private var ciFilter: CIFilter!
     private var ciFilter2: CIFilter!
     private var ciFilter3: CIFilter!
     private var ciFilter4: CIFilter!
     private var ciFilter5: CIFilter!
+    private var ciFilter6: CIFilter!
+    private var ciFilter7: CIFilter!
+    private var ciFilter8: CIFilter!
+    private var ciFilter9: CIFilter!
     var context : CIContext!
     var context2 : CIContext!
     var context3 : CIContext!
     var context4 : CIContext!
     var context5 : CIContext!
+    var context6 : CIContext!
+    var context7 : CIContext!
+    var context8 : CIContext!
+    var context9 : CIContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         cameraimageView.image = originalImage
         //UICollectionViewFlowLayoutをインスタンス化
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 15, left: 5, bottom: 15, right: 5)//レイアウトを調整
@@ -54,15 +66,15 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     
     //表示するセルの数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-              //今回はセルを9個にしてみる
-              return 9
+        return imageArray.count
        }
        
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-              //表示するCellの登録
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-              //セルの背景色をgrayに
-              cell.backgroundColor = .gray
+        
+        //表示するCellの登録
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MyCustomCell
+        
+        cell.cameraImageView.image = imageArray[indexPath.row]
 
               return cell
           }
@@ -78,10 +90,22 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
             
-        guard let ciImage = originalImage.ciImage ?? CIImage(image: originalImage) else { return }
+    //全ての画像をciImageに変換する
+        for i in 0..<imageArray.count{
+            guard let ciImageArray = imageArray[i].ciImage ?? CIImage(image: imageArray[i]) else{return} //エラー発生
             
-        cameraimageView.image = originalImage
-
+        }
+        //guard let ciImage2 = imageArray[1].ciImage ?? CIImage(image: imageArray[1]) else{return}
+        //guard let ciImage3 = imageArray[2].ciImage ?? CIImage(image: imageArray[2]) else{return}
+        //guard let ciImage4 = imageArray[3].ciImage ?? CIImage(image: imageArray[3]) else{return}
+        //guard let ciImage5 = imageArray[4].ciImage ?? CIImage(image: imageArray[4]) else{return}
+        //guard let ciImage6 = imageArray[5].ciImage ?? CIImage(image: imageArray[5]) else{return}
+        //guard let ciImage7 = imageArray[6].ciImage ?? CIImage(image: imageArray[6]) else{return}
+        //guard let ciImage8 = imageArray[7].ciImage ?? CIImage(image: imageArray[7]) else{return}
+        //guard let ciImage9 = imageArray[8].ciImage ?? CIImage(image: imageArray[8]) else{return}
+        
+//guard let ciImage = uiImage.ciImage ?? CIImage(image: uiImage) else { return }
+        
          //ハイライトのスライダー
          highlightSlider.maximumValue = 1
          highlightSlider.minimumValue = 0
@@ -118,21 +142,28 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
          ciFilter = CIFilter(name: "CIHighlightShadowAdjust")
          ciFilter2 = CIFilter(name: "CIExposureAdjust")
          ciFilter3 = CIFilter(name: "CIColorControls")
-         ciFilter4 = CIFilter(name:"CIColorControls")
-         ciFilter5 = CIFilter(name: "CIHighlightShadowAdjust")
+         ciFilter4 = CIFilter(name: "CIHighlightShadowAdjust")
+         //ciFilter5 = CIFilter(name:"CIColorControls")
+         //ciFilter6 = CIFilter(name: "CIHighlightShadowAdjust")
+         //ciFilter7 = CIFilter(name: "CIExposureAdjust")
+         //ciFilter8 = CIFilter(name: "CIColorControls")
+         //ciFilter9 = CIFilter(name: "CIHighlightShadowAdjust")
         
          context = CIContext()
          context2 = CIContext()
          context3 = CIContext()
          context4 = CIContext()
          context5 = CIContext()
+         context6 = CIContext()
+         context7 = CIContext()
+         context8 = CIContext()
+         context9 = CIContext()
 
          // 入力画像の設定
-         ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
-         ciFilter2.setValue(ciImage, forKey: kCIInputImageKey)
-         ciFilter3.setValue(ciImage, forKey: kCIInputImageKey)
-         ciFilter4.setValue(ciImage, forKey: kCIInputImageKey)
-         ciFilter5.setValue(ciImage, forKey: kCIInputImageKey)
+         ciFilter.setValue(ciImageArray, forKey: kCIInputImageKey)
+         ciFilter2.setValue(ciImageArray, forKey: kCIInputImageKey)
+         ciFilter3.setValue(ciImageArray, forKey: kCIInputImageKey)
+         ciFilter4.setValue(ciImageArray, forKey: kCIInputImageKey)
      }
     
     @IBAction func valueChanged(_ sender: UISlider) {
@@ -144,7 +175,15 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
 
         // Filter適応後の画像を表示
         if let originalImage = ciFilter2.outputImage {
-            cameraimageView.image = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 1, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 2, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 3, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 4, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 5, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 6, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 7, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 8, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
         }
     }
     
@@ -157,11 +196,18 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
 
                 // Filter適応後の画像を表示
                 if let originalImage = ciFilter.outputImage {
-                    cameraimageView.image = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 1, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 2, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 3, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 4, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 5, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 6, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 7, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
+            (collectionView.cellForItem(at: IndexPath(item: 8, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: originalImage)
                 }
             }
     
-
     @IBAction func valueChanged3(_ sender: UISlider) {
             saidoLabel.text = String(sender.value)
 
@@ -170,8 +216,16 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
 
             // Filter適応後の画像を表示
             if let filteredImage = ciFilter3.outputImage {
-                
-            cameraimageView.image = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage )
+                (collectionView.cellForItem(at: IndexPath(item: 1, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 2, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 3, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 4, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 5, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 6, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 7, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                (collectionView.cellForItem(at: IndexPath(item: 8, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+         
            }
         }
     
@@ -184,7 +238,16 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
            // Filter適応後の画像を表示
           if let filteredImage = ciFilter4.outputImage {
             
-          cameraimageView.image = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage )
+             (collectionView.cellForItem(at: IndexPath(item: 1, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 2, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 3, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 4, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 5, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 6, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 7, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 8, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                 
         }
       }
        @IBAction func valueChanged5(_ sender: UISlider) {
@@ -195,7 +258,16 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
 
             // Filter適応後の画像を表示
             if let filteredImage = ciFilter5.outputImage {
-            cameraimageView.image = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage )
+             (collectionView.cellForItem(at: IndexPath(item: 1, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 2, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 3, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 4, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 5, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 6, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 7, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+             (collectionView.cellForItem(at: IndexPath(item: 8, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
+                  
             }
         }
     
@@ -204,7 +276,27 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func savePhoto(){
-           UIImageWriteToSavedPhotosAlbum(cameraimageView.image!, nil, nil, nil)
+        for i in 0...8{
+            UIImageWriteToSavedPhotosAlbum(imageArray[i], nil, nil, nil)
        }
-}
+    }
+    // 保存結果をアラートで表示する
+    func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
 
+        var title = "保存完了"
+        var message = "カメラロールに保存しました"
+
+        if error != nil {
+            title = "エラー"
+            message = "保存に失敗しました"
+        }
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        // OKボタンを追加
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        // UIAlertController を表示
+        self.present(alert, animated: true, completion: nil)
+    }
+  }

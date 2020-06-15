@@ -121,12 +121,12 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "toEditViewController"{
             let EditViewController:  EditViewController = segue.destination as! EditViewController
         
-            //EditViewController.originalImage = self.cameraImageView.image
+        EditViewController.imageArray = self.imageArray
             
         }else if segue.identifier == "toFilterViewController"{
             let FilterViewController:  FilterViewController = segue.destination as! FilterViewController
             
-            //FilterViewController.originalImage = self.cameraImageView.image
+         FilterViewController.imageArray = self.imageArray
         }
     }
 }

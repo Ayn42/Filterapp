@@ -12,18 +12,16 @@ import DKImagePickerController
 
 class FilterViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet var cameraImageView: UIImageView!
     @IBOutlet var collectionView : UICollectionView!
-       
-       //画像加工するための元となる画像
-       var originalImage: UIImage!
+    private let reuseIdentifier = "Cell"
+    
+       var imageArray : [UIImage] = [UIImage]()
        
        //画像加工するフィルターの宣言
        var filter: CIFilter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         cameraImageView.image = originalImage
         
         //UICollectionViewFlowLayoutをインスタンス化
         let layout = UICollectionViewFlowLayout()
@@ -37,15 +35,13 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     //表示するセルの数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           //今回はセルを9個にしてみる
-           return 9
+        return imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            //表示するCellの登録
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-           //セルの背景色をgrayに
-           cell.backgroundColor = .gray
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)as! MyCustomCell
+          cell.cameraImageView.image = imageArray[indexPath.row]
 
            return cell
        }
@@ -60,57 +56,114 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     //表示している画像にフィルターを加工する時のメソッド
     @IBAction func Filter1(){
-           let filterImage: CIImage = CIImage(image: originalImage)!
-           
+        
+        for i in 0..<imageArray.count{
+            //実行されるコード
+            let filterImage: CIImage = CIImage(image: imageArray[i])!//エラー発生
+            filter = CIFilter(name: "CIColorControls")!
+            filter.setValue(filterImage, forKey: kCIInputImageKey)
+            //彩度の調整
+            filter.setValue(1.0, forKey: "inputSaturation")
+            //明度の調整
+            filter.setValue(0.5, forKey:"inputBrightness")
+            //コントラストの調整
+            filter.setValue(2.5, forKey: "inputContrast")
+            
+            let ctx = CIContext(options: nil)
+            let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+            imageArray[i] = UIImage(cgImage : cgImage!)
+            
+        }
+        
            //フィルターの設定
-           filter = CIFilter(name: "CIColorControls")!
-           filter.setValue(filterImage, forKey: kCIInputImageKey)
+           //filter = CIFilter(name: "CIColorControls")!
+           //filter.setValue(filterImage, forKey: kCIInputImageKey)
            //彩度の調整
-           filter.setValue(1.0, forKey: "inputSaturation")
+           //filter.setValue(1.0, forKey: "inputSaturation")
            //明度の調整
-           filter.setValue(0.5, forKey:"inputBrightness")
+           //filter.setValue(0.5, forKey:"inputBrightness")
            //コントラストの調整
-           filter.setValue(2.5, forKey: "inputContrast")
-           
-           let ctx = CIContext(options: nil)
-           let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-           cameraImageView.image = UIImage(cgImage: cgImage!)
+           //filter.setValue(2.5, forKey: "inputContrast")
        }
     @IBAction func Filter2(){
         
-       let filterImage: CIImage = CIImage(image: originalImage)!
-                 
-            //フィルターの設定
+        for i in 0..<imageArray.count{
+            //実行されるコード
+            let filterImage: CIImage = CIImage(image: imageArray[i])!
             filter = CIFilter(name: "CISepiaTone")!
             filter.setValue(filterImage, forKey: kCIInputImageKey)
             //彩度の調整
             filter.setValue(0.8, forKey: "inputIntensity")
-                 
             let ctx = CIContext(options: nil)
             let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-            cameraImageView.image = UIImage(cgImage: cgImage!)
-    }
-    @IBAction func Filter3(){
-        let filterImage: CIImage = CIImage(image: originalImage)!
+            imageArray[i] = UIImage(cgImage : cgImage!)
+                }
                  
             //フィルターの設定
-            filter = CIFilter(name: "CIColorMonochrome")!
-            filter.setValue(filterImage, forKey: kCIInputImageKey)
+            //filter = CIFilter(name: "CISepiaTone")!
+            //filter.setValue(filterImage, forKey: kCIInputImageKey)
             //彩度の調整
-          filter.setValue(CIColor(red: 0.75, green: 0.75, blue: 0.75), forKey: "inputColor")
+            //filter.setValue(0.8, forKey: "inputIntensity")
+                 
+            //let ctx = CIContext(options: nil)
+            //let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+            //filter.outputImage
+    }
+    @IBAction func Filter3(){
+        for i in 0..<imageArray.count{
+            //実行されるコード
+            let filterImage: CIImage = CIImage(image: imageArray[i])!
+           filter = CIFilter(name: "CIColorMonochrome")!
+           filter.setValue(filterImage, forKey: kCIInputImageKey)
+            //彩度の調整
+            filter.setValue(CIColor(red: 0.75, green: 0.75, blue: 0.75), forKey: "inputColor")
             //明度の調整
-        filter.setValue(1.0, forKey:"inputIntensity")
-           
-            
+            filter.setValue(1.0, forKey:"inputIntensity")
             let ctx = CIContext(options: nil)
             let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-                 cameraImageView.image = UIImage(cgImage: cgImage!)
+            imageArray[i] = UIImage(cgImage : cgImage!)
+                 
+            //フィルターの設定
+            //filter = CIFilter(name: "CIColorMonochrome")!
+            //filter.setValue(filterImage, forKey: kCIInputImageKey)
+            //彩度の調整
+            //filter.setValue(CIColor(red: 0.75, green: 0.75, blue: 0.75), forKey: "inputColor")
+            //明度の調整
+            //filter.setValue(1.0, forKey:"inputIntensity")
+           
+            //let ctx = CIContext(options: nil)
+            //let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+            //filter.outputImage
+     }
     }
     
     @IBAction func back(){
-        self.dismiss(animated: true, completion: nil)
-    }
+          self.dismiss(animated: true, completion: nil)
+      }
+        
     @IBAction func savePhoto(){
-        UIImageWriteToSavedPhotosAlbum(cameraImageView.image!, nil, nil, nil)
+    for i in 0...8{
+         UIImageWriteToSavedPhotosAlbum(imageArray[i], nil, nil, nil)
+       }
     }
-}
+    // 保存結果をアラートで表示する
+    func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
+
+        var title = "保存完了"
+        var message = "カメラロールに保存しました"
+
+        if error != nil {
+            title = "エラー"
+            message = "保存に失敗しました"
+        }
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        // OKボタンを追加
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        // UIAlertController を表示
+        self.present(alert, animated: true, completion: nil)
+    }
+  }
+
