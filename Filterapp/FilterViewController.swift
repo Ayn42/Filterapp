@@ -72,19 +72,10 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             let ctx = CIContext(options: nil)
             let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
             imageArray[i] = UIImage(cgImage : cgImage!)
-            
+            (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filterImage)
         }
-        
-           //フィルターの設定
-           //filter = CIFilter(name: "CIColorControls")!
-           //filter.setValue(filterImage, forKey: kCIInputImageKey)
-           //彩度の調整
-           //filter.setValue(1.0, forKey: "inputSaturation")
-           //明度の調整
-           //filter.setValue(0.5, forKey:"inputBrightness")
-           //コントラストの調整
-           //filter.setValue(2.5, forKey: "inputContrast")
-       }
+    }
+    
     @IBAction func Filter2(){
         
         for i in 0..<imageArray.count{
@@ -97,18 +88,10 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             let ctx = CIContext(options: nil)
             let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
             imageArray[i] = UIImage(cgImage : cgImage!)
-                }
-                 
-            //フィルターの設定
-            //filter = CIFilter(name: "CISepiaTone")!
-            //filter.setValue(filterImage, forKey: kCIInputImageKey)
-            //彩度の調整
-            //filter.setValue(0.8, forKey: "inputIntensity")
-                 
-            //let ctx = CIContext(options: nil)
-            //let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-            //filter.outputImage
-    }
+            (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filterImage)
+            }
+        }
+    
     @IBAction func Filter3(){
         for i in 0..<imageArray.count{
             //実行されるコード
@@ -122,18 +105,8 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             let ctx = CIContext(options: nil)
             let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
             imageArray[i] = UIImage(cgImage : cgImage!)
-                 
-            //フィルターの設定
-            //filter = CIFilter(name: "CIColorMonochrome")!
-            //filter.setValue(filterImage, forKey: kCIInputImageKey)
-            //彩度の調整
-            //filter.setValue(CIColor(red: 0.75, green: 0.75, blue: 0.75), forKey: "inputColor")
-            //明度の調整
-            //filter.setValue(1.0, forKey:"inputIntensity")
-           
-            //let ctx = CIContext(options: nil)
-            //let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-            //filter.outputImage
+            (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filterImage)
+      
      }
     }
     

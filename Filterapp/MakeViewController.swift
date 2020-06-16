@@ -12,20 +12,13 @@ import DKImagePickerController
 
 class MakeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    //@IBOutlet var cameraImageView : UIImageView!
     @IBOutlet var filterButton : UIButton!
     @IBOutlet var editButton : UIButton!
     @IBOutlet var collectionView : UICollectionView!
     private let reuseIdentifier = "Cell"
     
     var imageArray : [UIImage] = [UIImage]()
-    //let saveData = UserDefaults.standard
-
-    //画像加工するための元となる画像
-    //var originalImage: UIImage!
-    //画像加工するフィルターの宣言
-    //var filter: CIFilter!
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,23 +27,10 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         layout.sectionInset = UIEdgeInsets(top: 15, left: 5, bottom: 15, right: 5)//レイアウトを調整
         layout.minimumInteritemSpacing = 0
         collectionView.collectionViewLayout = layout
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
-    //override func viewWillAppear(_ animated: Bool){
-        //super.viewWillAppear(true)
-        //if saveData.array(forKey: "Image") != nil{
-          //  imageArray = saveData.array(forKey: "Image")as![UIImage]
-        //}
-        //collectionView.reloadData()
-    //}
-    //セクション数を指定します
-    //func numberOfSections(in collectionView: UICollectionView) -> Int {
-           //return 1
-       //}
     
     //セルの個数を指定します
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,11 +40,6 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            //表示するCellの登録
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MyCustomCell
-        
-       // let nowIndexPathDictionary = imageArray[indexPath.row]
-           //セルの背景色をgrayに
-           //cell.backgroundColor = .gray
-          //cell.cameraImageView.image = originalImage
         
           cell.cameraImageView.image = imageArray[indexPath.row]
         
@@ -90,8 +65,6 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // 選択された画像はassetsに入れて返却されるのでfetchして取り出す
         for asset in assets {
         asset.fetchFullScreenImage(completeBlock: { (image, info) in
-        // ここで取り出せる
-        //self.cameraImageView.image = image
         //imageがnilの場合は早期リターン
             guard let appendImage = image else{
                 return
@@ -99,11 +72,11 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             //配列imageArrayに選択した画像を追加しcollectionViewをリロードして追加した画像を表示させる
             self.imageArray.append(appendImage)
             self.collectionView.reloadData()
-                    })
-                }
+                })
             }
+        }
                self.present(pickerController, animated: true) {}
-             }
+        }
     
     func performSegueToEdit(){
         performSegue(withIdentifier: "toEditViewController", sender: nil)
