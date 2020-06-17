@@ -10,11 +10,12 @@
 		42573CD460482F3D95721EF0 /* Pods_Filterapp_FilterappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7F15C1AC21C41BF326ABBE /* Pods_Filterapp_FilterappUITests.framework */; };
 		DC6E03C321A3A9A2AD206682 /* Pods_Filterapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3DA3CABBA5EB8C2AE280BD /* Pods_Filterapp.framework */; };
 		EF3FBB902499AB3E00CA981D /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB8F2499AB3D00CA981D /* background.jpeg */; };
-		EF3FBB922499AD3D00CA981D /* Download premium illustration of Earth tone abstract painting mobile phone (1).jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB912499AD3D00CA981D /* Download premium illustration of Earth tone abstract painting mobile phone (1).jpeg */; };
 		EF3FBB942499AE2400CA981D /* What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB932499AE2400CA981D /* What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg */; };
-		EF52F701248A804000B49AB2 /* flower.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF52F700248A804000B49AB2 /* flower.JPG */; };
-		EF52F705248A84E000B49AB2 /* edit2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF52F704248A84E000B49AB2 /* edit2.JPG */; };
-		EF56745A247ABDBB0093011E /* 背景画像.png in Resources */ = {isa = PBXBuildFile; fileRef = EF567459247ABDBA0093011E /* 背景画像.png */; };
+		EF3FBB96249A02A600CA981D /* Edit icon.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB95249A02A500CA981D /* Edit icon.JPG */; };
+		EF3FBB98249A037800CA981D /* F1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB97249A037800CA981D /* F1.JPG */; };
+		EF3FBB9A249A03CA00CA981D /* Filter icon.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB99249A03CA00CA981D /* Filter icon.JPG */; };
+		EF3FBB9C249A0D7B00CA981D /* F3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB9B249A0D7B00CA981D /* F3.JPG */; };
+		EF3FBB9E249A0DC900CA981D /* F2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF3FBB9D249A0DC900CA981D /* F2.JPG */; };
 		EF62012724741F9900CC363B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012624741F9900CC363B /* AppDelegate.swift */; };
 		EF62012924741F9900CC363B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012824741F9900CC363B /* SceneDelegate.swift */; };
 		EF62012B24741F9900CC363B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62012A24741F9900CC363B /* ViewController.swift */; };
@@ -79,11 +80,12 @@
 		E7840812EED3CB4A16D6CD02 /* Pods-FilterappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterappTests.release.xcconfig"; path = "Target Support Files/Pods-FilterappTests/Pods-FilterappTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED3DA3CABBA5EB8C2AE280BD /* Pods_Filterapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filterapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3FBB8F2499AB3D00CA981D /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
-		EF3FBB912499AD3D00CA981D /* Download premium illustration of Earth tone abstract painting mobile phone (1).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Download premium illustration of Earth tone abstract painting mobile phone (1).jpeg"; sourceTree = "<group>"; };
 		EF3FBB932499AE2400CA981D /* What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg"; sourceTree = "<group>"; };
-		EF52F700248A804000B49AB2 /* flower.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.JPG; sourceTree = "<group>"; };
-		EF52F704248A84E000B49AB2 /* edit2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = edit2.JPG; sourceTree = "<group>"; };
-		EF567459247ABDBA0093011E /* 背景画像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景画像.png"; sourceTree = "<group>"; };
+		EF3FBB95249A02A500CA981D /* Edit icon.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Edit icon.JPG"; sourceTree = "<group>"; };
+		EF3FBB97249A037800CA981D /* F1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = F1.JPG; sourceTree = "<group>"; };
+		EF3FBB99249A03CA00CA981D /* Filter icon.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Filter icon.JPG"; sourceTree = "<group>"; };
+		EF3FBB9B249A0D7B00CA981D /* F3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = F3.JPG; sourceTree = "<group>"; };
+		EF3FBB9D249A0DC900CA981D /* F2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = F2.JPG; sourceTree = "<group>"; };
 		EF62012324741F9900CC363B /* Filterapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filterapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF62012624741F9900CC363B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF62012824741F9900CC363B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,11 +203,12 @@
 		EF62012524741F9900CC363B /* Filterapp */ = {
 			isa = PBXGroup;
 			children = (
-				EF567459247ABDBA0093011E /* 背景画像.png */,
-				EF52F700248A804000B49AB2 /* flower.JPG */,
-				EF52F704248A84E000B49AB2 /* edit2.JPG */,
+				EF3FBB99249A03CA00CA981D /* Filter icon.JPG */,
+				EF3FBB97249A037800CA981D /* F1.JPG */,
+				EF3FBB9D249A0DC900CA981D /* F2.JPG */,
+				EF3FBB9B249A0D7B00CA981D /* F3.JPG */,
+				EF3FBB95249A02A500CA981D /* Edit icon.JPG */,
 				EF3FBB932499AE2400CA981D /* What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg */,
-				EF3FBB912499AD3D00CA981D /* Download premium illustration of Earth tone abstract painting mobile phone (1).jpeg */,
 				EF3FBB8F2499AB3D00CA981D /* background.jpeg */,
 				EF62012624741F9900CC363B /* AppDelegate.swift */,
 				EF62012824741F9900CC363B /* SceneDelegate.swift */,
@@ -396,16 +399,18 @@
 			files = (
 				EFDE74FC2478CA2C009C72EB /* iTunesArtwork@3x.png in Resources */,
 				EF3FBB902499AB3E00CA981D /* background.jpeg in Resources */,
+				EF3FBB98249A037800CA981D /* F1.JPG in Resources */,
 				EFDE74F92478CA2C009C72EB /* Icon-App-29x29@2x.png in Resources */,
+				EF3FBB9E249A0DC900CA981D /* F2.JPG in Resources */,
 				EF3FBB942499AE2400CA981D /* What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg in Resources */,
 				EFDE74F42478CA2C009C72EB /* Icon-App-40x40@2x.png in Resources */,
-				EF52F701248A804000B49AB2 /* flower.JPG in Resources */,
 				EFDE74F02478CA2C009C72EB /* ItunesArtwork@2x.png in Resources */,
-				EF52F705248A84E000B49AB2 /* edit2.JPG in Resources */,
 				EFDE74FA2478CA2C009C72EB /* README.md in Resources */,
 				EF62013324741F9E00CC363B /* LaunchScreen.storyboard in Resources */,
 				EFDE74EE2478CA2C009C72EB /* Icon-App-83.5x83.5@2x.png in Resources */,
+				EF3FBB96249A02A600CA981D /* Edit icon.JPG in Resources */,
 				EFDE74ED2478CA2C009C72EB /* Icon-App-20x20@1x.png in Resources */,
+				EF3FBB9A249A03CA00CA981D /* Filter icon.JPG in Resources */,
 				EFDE74F62478CA2C009C72EB /* Icon-App-60x60@2x.png in Resources */,
 				EFDE74F22478CA2C009C72EB /* Icon-App-20x20@2x.png in Resources */,
 				EFDE74EF2478CA2C009C72EB /* Icon-App-20x20@3x.png in Resources */,
@@ -417,10 +422,9 @@
 				EFDE74F32478CA2C009C72EB /* Icon-App-29x29@3x.png in Resources */,
 				EFDE74F52478CA2C009C72EB /* Icon-App-60x60@3x.png in Resources */,
 				EFDE74E92478CA2C009C72EB /* iTunesArtwork@1x.png in Resources */,
-				EF56745A247ABDBB0093011E /* 背景画像.png in Resources */,
+				EF3FBB9C249A0D7B00CA981D /* F3.JPG in Resources */,
 				EFDE74F82478CA2C009C72EB /* Icon-App-40x40@3x.png in Resources */,
 				EF62012E24741F9900CC363B /* Main.storyboard in Resources */,
-				EF3FBB922499AD3D00CA981D /* Download premium illustration of Earth tone abstract painting mobile phone (1).jpeg in Resources */,
 				EFDE74EB2478CA2C009C72EB /* Icon-App-29x29@1x.png in Resources */,
 				EFDE74F12478CA2C009C72EB /* Contents.json in Resources */,
 			);

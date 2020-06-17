@@ -41,7 +41,7 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            //表示するCellの登録
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)as! MyCustomCell
-          cell.cameraImageView.image = imageArray[indexPath.row]
+           cell.cameraImageView.image = imageArray[indexPath.row]
 
            return cell
        }
@@ -118,25 +118,6 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
         for i in 0..<imageArray.count{
          UIImageWriteToSavedPhotosAlbum(imageArray[i], nil, nil, nil)
        }
-    }
-    // 保存結果をアラートで表示する
-    func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
-
-        var title = "保存完了"
-        var message = "カメラロールに保存しました"
-
-        if error != nil {
-            title = "エラー"
-            message = "保存に失敗しました"
-        }
-
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-
-        // OKボタンを追加
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-
-        // UIAlertController を表示
-        self.present(alert, animated: true, completion: nil)
     }
   }
 

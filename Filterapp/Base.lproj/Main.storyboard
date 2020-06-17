@@ -89,8 +89,8 @@
                                     <constraint firstAttribute="height" constant="90" id="dd9-ot-ujU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Filter" backgroundImage="flower.JPG">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Filter" backgroundImage="Filter icon.JPG">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Jvx-X9-fGb" kind="presentation" identifier="toFilterViewController" modalPresentationStyle="fullScreen" id="wnb-OP-Iz3"/>
@@ -104,8 +104,8 @@
                                     <constraint firstAttribute="height" constant="90" id="DjG-D5-mUu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Edit" backgroundImage="edit2.JPG">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Edit" backgroundImage="Edit icon.JPG">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="6vR-kX-cKi" kind="presentation" identifier="toEditViewController" modalPresentationStyle="fullScreen" id="lDQ-HN-sGQ"/>
@@ -213,6 +213,16 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="L08-E9-HsH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNz-Bi-A6M">
+                                <rect key="frame" x="60" y="670" width="37" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="F 1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Filter1" destination="Jvx-X9-fGb" eventType="touchUpInside" id="EnM-sd-eSX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agL-Ga-bDn">
                                 <rect key="frame" x="168.66666666666666" y="672" width="38" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -223,14 +233,14 @@
                                     <action selector="Filter2" destination="Jvx-X9-fGb" eventType="touchUpInside" id="Yaq-1b-sYz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNz-Bi-A6M">
-                                <rect key="frame" x="60" y="670" width="37" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="F 1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8du-ss-1sI">
+                                <rect key="frame" x="276" y="672" width="39" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="F 3">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="Filter1" destination="Jvx-X9-fGb" eventType="touchUpInside" id="EnM-sd-eSX"/>
+                                    <action selector="Filter3" destination="Jvx-X9-fGb" eventType="touchUpInside" id="iJw-Nw-SGn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwa-pJ-FCR">
@@ -255,16 +265,6 @@
                                 </state>
                                 <connections>
                                     <action selector="savePhoto" destination="Jvx-X9-fGb" eventType="touchUpInside" id="4Kp-O2-xcR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8du-ss-1sI">
-                                <rect key="frame" x="276" y="672" width="39" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="F 3">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="Filter3" destination="Jvx-X9-fGb" eventType="touchUpInside" id="iJw-Nw-SGn"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yy3-fX-hvT">
@@ -568,9 +568,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Edit icon.JPG" width="601" height="598"/>
+        <image name="Filter icon.JPG" width="601" height="591"/>
         <image name="What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg" width="667" height="1000"/>
         <image name="background.jpeg" width="2340" height="3874"/>
-        <image name="edit2.JPG" width="516" height="516"/>
-        <image name="flower.JPG" width="1400" height="1292"/>
     </resources>
 </document>

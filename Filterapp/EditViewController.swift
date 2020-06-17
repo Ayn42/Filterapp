@@ -152,8 +152,11 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
         roshutuLabel.text = String(sender.value)
         // 露出の設定
         roshutuFilter[i].setValue(sender.value, forKey: "inputEV")
+            
         if let filteredImage = roshutuFilter[i].outputImage {
-            imageArray[i] = UIImage(ciImage: filteredImage)
+            let ctx = CIContext(options: nil)
+            let cgImage = ctx.createCGImage(roshutuFilter[i].outputImage!, from: roshutuFilter[i].outputImage!.extent)
+            imageArray[i] = UIImage(cgImage : cgImage!)
             (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
             }
         }
@@ -166,7 +169,9 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
             highlightLabel.text = String(sender.value)
             highlightFilter[i].setValue(sender.value, forKey: "inputHighlightAmount")
             if let filteredImage = highlightFilter[i].outputImage {
-             imageArray[i] = UIImage(ciImage: filteredImage)
+            let ctx = CIContext(options: nil)
+            let cgImage = ctx.createCGImage(highlightFilter[i].outputImage!, from: highlightFilter[i].outputImage!.extent)
+            imageArray[i] = UIImage(cgImage : cgImage!)
             (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
             }
         }
@@ -179,7 +184,9 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
         // 彩度の設定
         saidoFilter[i].setValue(sender.value, forKey: "inputSaturation")
         if let filteredImage = saidoFilter[i].outputImage {
-                imageArray[i] = UIImage(ciImage: filteredImage)
+           let ctx = CIContext(options: nil)
+           let cgImage = ctx.createCGImage(saidoFilter[i].outputImage!, from: saidoFilter[i].outputImage!.extent)
+           imageArray[i] = UIImage(cgImage : cgImage!)
                 (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
             }
         }
@@ -191,7 +198,9 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
         // コントラストの設定
         contrustFilter[i].setValue(sender.value, forKey: "inputContrast")
         if let filteredImage = contrustFilter[i].outputImage {
-        imageArray[i] = UIImage(ciImage: filteredImage)
+        let ctx = CIContext(options: nil)
+        let cgImage = ctx.createCGImage(contrustFilter[i].outputImage!, from: contrustFilter[i].outputImage!.extent)
+        imageArray[i] = UIImage(cgImage : cgImage!)
         (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
             }
         }
@@ -203,7 +212,9 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
         // シャドウの設定
         shadowFilter[i].setValue(sender.value, forKey: "inputShadowAmount")
         if let filteredImage = shadowFilter[i].outputImage {
-        imageArray[i] = UIImage(ciImage: filteredImage)
+        let ctx = CIContext(options: nil)
+        let cgImage = ctx.createCGImage(shadowFilter[i].outputImage!, from: shadowFilter[i].outputImage!.extent)
+        imageArray[i] = UIImage(cgImage : cgImage!)
         (collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as! MyCustomCell).cameraImageView.image  = UIImage(ciImage: filteredImage)
         }
       }
@@ -214,27 +225,8 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func savePhoto(){
-        for i in 0..<imageArray.count{
+           for i in 0..<imageArray.count{
             UIImageWriteToSavedPhotosAlbum(imageArray[i], nil, nil, nil)
-        }
-    }
-    // 保存結果をアラートで表示する
-    func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
-        
-        var title = "保存完了"
-        var message = "カメラロールに保存しました"
-        
-        if error != nil {
-            title = "エラー"
-            message = "保存に失敗しました"
-        }
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        // OKボタンを追加
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        // UIAlertController を表示
-        self.present(alert, animated: true, completion: nil)
-    }
+          }
+       }
 }
