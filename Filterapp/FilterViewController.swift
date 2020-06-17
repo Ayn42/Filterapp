@@ -115,7 +115,7 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
       }
         
     @IBAction func savePhoto(){
-    for i in 0...8{
+        for i in 0..<imageArray.count{
          UIImageWriteToSavedPhotosAlbum(imageArray[i], nil, nil, nil)
        }
     }
