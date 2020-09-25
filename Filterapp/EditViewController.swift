@@ -105,7 +105,7 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
         //ハイライトのスライダー
         highlightSlider.maximumValue = 1
         highlightSlider.minimumValue = 0
-        highlightSlider.value = 1
+        highlightSlider.value = 0.5
         
         //露出のスライダー
         roshutuSlider.maximumValue = 3

@@ -57,6 +57,8 @@
 		EF80FFCD249A43E9003096A3 /* icon-messages-app-iPadAir-74x55@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF80FF9B249A43E9003096A3 /* icon-messages-app-iPadAir-74x55@2x.png */; };
 		EF80FFCE249A43E9003096A3 /* icon-messages-app-iPhone-60x45@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF80FF9C249A43E9003096A3 /* icon-messages-app-iPhone-60x45@3x.png */; };
 		EF80FFCF249A43E9003096A3 /* icon-messages-app-iPhone-60x45@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF80FF9D249A43E9003096A3 /* icon-messages-app-iPhone-60x45@2x.png */; };
+		EF9CDB76251DB8E900E746A0 /* 07c37c15-cde4-4ced-86bf-f3aedb4b5b9f.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF9CDB75251DB8E900E746A0 /* 07c37c15-cde4-4ced-86bf-f3aedb4b5b9f.jpeg */; };
+		EF9CDB78251DF16400E746A0 /* backgroundimage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EF9CDB77251DF16400E746A0 /* backgroundimage.mp4 */; };
 		EFADD2572490D1720047A681 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFADD2562490D1720047A681 /* CollectionViewCell.swift */; };
 		EFADD25924926B3A0047A681 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFADD25824926B3A0047A681 /* CollectionViewController.swift */; };
 		EFDE746F247800F4009C72EB /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE746E247800F4009C72EB /* FilterViewController.swift */; };
@@ -144,6 +146,8 @@
 		EF80FF9B249A43E9003096A3 /* icon-messages-app-iPadAir-74x55@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-iPadAir-74x55@2x.png"; sourceTree = "<group>"; };
 		EF80FF9C249A43E9003096A3 /* icon-messages-app-iPhone-60x45@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-iPhone-60x45@3x.png"; sourceTree = "<group>"; };
 		EF80FF9D249A43E9003096A3 /* icon-messages-app-iPhone-60x45@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-iPhone-60x45@2x.png"; sourceTree = "<group>"; };
+		EF9CDB75251DB8E900E746A0 /* 07c37c15-cde4-4ced-86bf-f3aedb4b5b9f.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "07c37c15-cde4-4ced-86bf-f3aedb4b5b9f.jpeg"; sourceTree = "<group>"; };
+		EF9CDB77251DF16400E746A0 /* backgroundimage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundimage.mp4; sourceTree = "<group>"; };
 		EFADD2562490D1720047A681 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		EFADD25824926B3A0047A681 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		EFDE746E247800F4009C72EB /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 		EF62012524741F9900CC363B /* Filterapp */ = {
 			isa = PBXGroup;
 			children = (
+				EF9CDB77251DF16400E746A0 /* backgroundimage.mp4 */,
+				EF9CDB75251DB8E900E746A0 /* 07c37c15-cde4-4ced-86bf-f3aedb4b5b9f.jpeg */,
 				EF3FBB99249A03CA00CA981D /* Filter icon.JPG */,
 				EF3FBB97249A037800CA981D /* F1.JPG */,
 				EF3FBB9D249A0DC900CA981D /* F2.JPG */,
@@ -499,6 +505,7 @@
 				EF80FFC9249A43E9003096A3 /* icon-messages-transcript-32x24@2x.png in Resources */,
 				EF80FFC4249A43E9003096A3 /* icon-messages-app-iPhone-60x45@1x.png in Resources */,
 				EF3FBB902499AB3E00CA981D /* background.jpeg in Resources */,
+				EF9CDB76251DB8E900E746A0 /* 07c37c15-cde4-4ced-86bf-f3aedb4b5b9f.jpeg in Resources */,
 				EF3FBB98249A037800CA981D /* F1.JPG in Resources */,
 				EF80FFCA249A43E9003096A3 /* icon-messages-app-27x20@2x.png in Resources */,
 				EF80FFBC249A43E9003096A3 /* iTunesArtwork@3x.png in Resources */,
@@ -523,6 +530,7 @@
 				EF80FFB2249A43E9003096A3 /* Icon-App-20x20@2x.png in Resources */,
 				EF80FFC8249A43E9003096A3 /* icon-messages-app-27x20@1x.png in Resources */,
 				EF3FBB9A249A03CA00CA981D /* Filter icon.JPG in Resources */,
+				EF9CDB78251DF16400E746A0 /* backgroundimage.mp4 in Resources */,
 				EF80FFBD249A43E9003096A3 /* ic_launcher.png in Resources */,
 				EF80FFB4249A43E9003096A3 /* Icon-App-40x40@2x.png in Resources */,
 				EF80FFAB249A43E9003096A3 /* Icon-App-29x29@1x.png in Resources */,

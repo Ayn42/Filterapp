@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "What's the Difference between Quartz vs_ Marble _ Best Choice for Countertops_.jpeg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "07c37c15-cde4-4ced-86bf-f3aedb4b5b9f.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

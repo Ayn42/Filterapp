@@ -60,8 +60,8 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func openAlbum(){
                  
         let pickerController = DKImagePickerController()
-        // 選択可能な枚数を9にする
-        pickerController.maxSelectableCount = 9
+        // 選択可能な枚数を100にする
+        pickerController.maxSelectableCount = 100
         pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
             self.imageArray.removeAll()
                                    

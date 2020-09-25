@@ -56,9 +56,11 @@ PODS:
   - SDWebImageFLPlugin (0.4.0):
     - FLAnimatedImage (>= 1.0.11)
     - SDWebImage/Core (~> 5.6)
+  - SwiftGifOrigin (1.7.0)
 
 DEPENDENCIES:
   - DKImagePickerController
+  - SwiftGifOrigin (~> 1.7.0)
 
 SPEC REPOS:
   trunk:
@@ -69,6 +71,7 @@ SPEC REPOS:
     - FLAnimatedImage
     - SDWebImage
     - SDWebImageFLPlugin
+    - SwiftGifOrigin
 
 SPEC CHECKSUMS:
   CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
@@ -78,7 +81,8 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
 
-PODFILE CHECKSUM: f8ea10308f1020e959b02b992da2833d708f8e0e
+PODFILE CHECKSUM: b229747dc4e0890a7769620f394b136906bae96f
 
 COCOAPODS: 1.9.3

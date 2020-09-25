@@ -7,6 +7,7 @@ target 'Filterapp' do
 
   # Pods for Filterapp
   pod'DKImagePickerController'
+  pod 'SwiftGifOrigin', '~> 1.7.0'
 
   target 'FilterappTests' do
     inherit! :search_paths
