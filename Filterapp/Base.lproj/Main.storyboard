@@ -18,23 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u46-lK-30C">
-                                <rect key="frame" x="0.0" y="144" width="147.5" height="80"/>
+                                <rect key="frame" x="0.0" y="144" width="161.5" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8sD-rT-fiC"/>
                                     <constraint firstAttribute="width" constant="375" id="fMa-1a-x1o"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" name="StartEditButtonColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGS-HB-DYl">
-                                <rect key="frame" x="4" y="602" width="140" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="11" y="602" width="140" height="60"/>
+                                <color key="backgroundColor" name="StartEditButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GTC-Y4-L1o"/>
                                     <constraint firstAttribute="width" constant="140" id="yEZ-1a-zzf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="Start Edit">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -551,6 +551,9 @@
         <image name="Primary backgroundimage" width="667" height="1000"/>
         <namedColor name="Primary backgroundcolor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="StartEditButtonColor">
+            <color red="1" green="1" blue="1" alpha="0.65025684931506844" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
