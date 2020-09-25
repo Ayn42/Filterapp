@@ -149,7 +149,7 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     @IBAction func valueChanged(_ sender: UISlider) {
         
         for i in 0..<imageArray.count{
-        roshutuLabel.text = String(sender.value)
+        roshutuLabel.text = String(format: "%.1f", sender.value)
         // 露出の設定
         roshutuFilter[i].setValue(sender.value, forKey: "inputEV")
             
@@ -166,7 +166,7 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
         
         // ハイライトの設定
         for i in 0..<imageArray.count{
-            highlightLabel.text = String(sender.value)
+            highlightLabel.text = String(format: "%.1f", sender.value)
             highlightFilter[i].setValue(sender.value, forKey: "inputHighlightAmount")
             if let filteredImage = highlightFilter[i].outputImage {
             let ctx = CIContext(options: nil)
@@ -180,7 +180,7 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     
     @IBAction func valueChanged3(_ sender: UISlider) {
         for i in 0..<imageArray.count{
-        saidoLabel.text = String(sender.value)
+        saidoLabel.text = String(format: "%.1f", sender.value)
         // 彩度の設定
         saidoFilter[i].setValue(sender.value, forKey: "inputSaturation")
         if let filteredImage = saidoFilter[i].outputImage {
@@ -194,7 +194,7 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     
     @IBAction func valueChanged4(_ sender: UISlider) {
         for i in 0..<imageArray.count{
-        contrustLabel.text = String(sender.value)
+        contrustLabel.text = String(format: "%.1f", sender.value)
         // コントラストの設定
         contrustFilter[i].setValue(sender.value, forKey: "inputContrast")
         if let filteredImage = contrustFilter[i].outputImage {
@@ -208,7 +208,7 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
 
     @IBAction func valueChanged5(_ sender: UISlider) {
         for i in 0..<imageArray.count{
-        shadowLabel.text = String(sender.value)
+        shadowLabel.text = String(format: "%.1f", sender.value)
         // シャドウの設定
         shadowFilter[i].setValue(sender.value, forKey: "inputShadowAmount")
         if let filteredImage = shadowFilter[i].outputImage {

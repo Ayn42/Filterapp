@@ -11,13 +11,16 @@ import DKImagePickerController
 
 class MyCustomCell: UICollectionViewCell {
     @IBOutlet weak var cameraImageView: UIImageView!
-    //var originalImage: UIImage!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+         
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        let leftConstraint = self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor)
+        let rightConstraint = self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor)
+        let topConstraint = self.contentView.topAnchor.constraint(equalTo: self.topAnchor)
+        let bottomConstraint = self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, rightConstraint, topConstraint, bottomConstraint])
     }
-    
-    //override func setSelected(_ selected:Bool, animated: Bool){
-        //super.setSelected(selected, animated: animated)}
 }
 

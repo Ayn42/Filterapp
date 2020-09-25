@@ -53,13 +53,12 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
           return CGSize(width: cellSize, height: cellSize)
       }
     
-    
     //表示している画像にフィルターを加工する時のメソッド
     @IBAction func Filter1(){
         
         for i in 0..<imageArray.count{
             //実行されるコード
-            let filterImage: CIImage = CIImage(image: imageArray[i])!//エラー発生
+            let filterImage: CIImage = CIImage(image: imageArray[i])!
             filter = CIFilter(name: "CIColorControls")!
             filter.setValue(filterImage, forKey: kCIInputImageKey)
             //彩度の調整

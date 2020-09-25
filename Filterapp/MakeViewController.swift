@@ -27,6 +27,9 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         layout.sectionInset = UIEdgeInsets(top: 15, left: 5, bottom: 15, right: 5)//レイアウトを調整
         layout.minimumInteritemSpacing = 0
         collectionView.collectionViewLayout = layout
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
         
         collectionView.delegate = self
         collectionView.dataSource = self
