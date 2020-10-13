@@ -21,11 +21,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>カメラを呼び出します</string>
+	<string>画像加工を行う写真を選択するためにカメラを呼び出します</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>写真と位置情報を紐づけるために位置情報を使用します</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>フォトライブラリに画像を保存します</string>
+	<string>フォトライブラリに画像加工後の写真を保存します</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>フォトライブラリから画像を呼び出します</string>
+	<string>フォトライブラリから画像加工を行うための画像を呼び出します</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
