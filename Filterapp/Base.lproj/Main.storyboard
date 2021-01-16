@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u46-lK-30C">
-                                <rect key="frame" x="0.0" y="144" width="161.5" height="80"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8sD-rT-fiC"/>
                                     <constraint firstAttribute="width" constant="375" id="fMa-1a-x1o"/>
@@ -76,12 +76,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Primary backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="uTZ-sR-2jE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Primary backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="uTZ-sR-2jE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-pj-J0G">
-                                <rect key="frame" x="0.0" y="88" width="414" height="604"/>
-                                <color key="backgroundColor" name="Primary backgroundcolor"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="590"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eGp-LW-M2x">
                                     <size key="itemSize" width="151" height="144"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -113,14 +113,13 @@
                                     <outlet property="delegate" destination="L9W-cA-16r" id="1eJ-DX-OwK"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGG-5q-e0u">
-                                <rect key="frame" x="73" y="712" width="269" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGG-5q-e0u">
+                                <rect key="frame" x="56" y="734" width="302" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="KDr-ZK-nyW"/>
-                                    <constraint firstAttribute="height" constant="90" id="dd9-ot-ujU"/>
+                                    <constraint firstAttribute="height" constant="48" id="WVx-Xu-ObF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="17"/>
                                 <state key="normal" title="Filter">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -130,17 +129,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Jvx-X9-fGb" kind="show" identifier="toFilterViewController" id="wnb-OP-Iz3"/>
+                                    <action selector="filterButtonPressed" destination="L9W-cA-16r" eventType="touchUpInside" id="mbN-DZ-EFc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mow-Ns-03c">
-                                <rect key="frame" x="73" y="795" width="269" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mow-Ns-03c">
+                                <rect key="frame" x="56" y="798" width="302" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="3ay-QX-2gp"/>
-                                    <constraint firstAttribute="height" constant="90" id="DjG-D5-mUu"/>
+                                    <constraint firstAttribute="height" constant="48" id="qeZ-6m-Z38"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="17"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -150,24 +148,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="6vR-kX-cKi" kind="show" identifier="toEditViewController" id="lDQ-HN-sGQ"/>
+                                    <action selector="editButtonPressed" destination="L9W-cA-16r" eventType="touchUpInside" id="TOF-Q4-O6M"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xcb-g4-TdY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xcb-g4-TdY" firstAttribute="trailing" secondItem="Mow-Ns-03c" secondAttribute="trailing" constant="56" id="1ap-X7-KUa"/>
+                            <constraint firstItem="RGG-5q-e0u" firstAttribute="top" secondItem="bhx-pj-J0G" secondAttribute="bottom" constant="56" id="40H-ae-rzT"/>
                             <constraint firstItem="bhx-pj-J0G" firstAttribute="top" secondItem="xcb-g4-TdY" secondAttribute="top" id="6F7-kf-O0Z"/>
-                            <constraint firstItem="xcb-g4-TdY" firstAttribute="trailing" secondItem="Mow-Ns-03c" secondAttribute="trailing" constant="60" id="7gl-pu-hND"/>
                             <constraint firstItem="bhx-pj-J0G" firstAttribute="trailing" secondItem="xcb-g4-TdY" secondAttribute="trailing" id="ANW-Ff-ag4"/>
-                            <constraint firstItem="RGG-5q-e0u" firstAttribute="top" secondItem="bhx-pj-J0G" secondAttribute="bottom" constant="20" id="DP5-3U-AOp"/>
+                            <constraint firstItem="Mow-Ns-03c" firstAttribute="leading" secondItem="xcb-g4-TdY" secondAttribute="leading" constant="56" id="BDq-1G-1bS"/>
+                            <constraint firstItem="bhx-pj-J0G" firstAttribute="leading" secondItem="xcb-g4-TdY" secondAttribute="leading" id="DOx-2C-Mwi"/>
+                            <constraint firstItem="Mow-Ns-03c" firstAttribute="top" secondItem="RGG-5q-e0u" secondAttribute="bottom" constant="16" id="EBv-kv-Z12"/>
+                            <constraint firstItem="RGG-5q-e0u" firstAttribute="leading" secondItem="xcb-g4-TdY" secondAttribute="leading" constant="56" id="GhZ-RX-5CZ"/>
+                            <constraint firstItem="xcb-g4-TdY" firstAttribute="bottom" secondItem="Mow-Ns-03c" secondAttribute="bottom" constant="16" id="MGz-xO-4fw"/>
                             <constraint firstAttribute="bottom" secondItem="uTZ-sR-2jE" secondAttribute="bottom" id="Osr-Kb-1ZQ"/>
-                            <constraint firstItem="xcb-g4-TdY" firstAttribute="bottom" secondItem="RGG-5q-e0u" secondAttribute="bottom" constant="60" id="R46-3t-wVl"/>
                             <constraint firstItem="uTZ-sR-2jE" firstAttribute="leading" secondItem="xcb-g4-TdY" secondAttribute="leading" id="TF4-b9-83f"/>
-                            <constraint firstItem="RGG-5q-e0u" firstAttribute="leading" secondItem="xcb-g4-TdY" secondAttribute="leading" constant="60" id="Ta4-Us-gIE"/>
-                            <constraint firstItem="xcb-g4-TdY" firstAttribute="bottom" secondItem="Mow-Ns-03c" secondAttribute="bottom" constant="60" id="Yd6-37-bW8"/>
                             <constraint firstItem="bhx-pj-J0G" firstAttribute="leading" secondItem="xcb-g4-TdY" secondAttribute="leading" id="ZCU-Lh-K5h"/>
+                            <constraint firstItem="bhx-pj-J0G" firstAttribute="top" secondItem="xcb-g4-TdY" secondAttribute="top" id="ZpT-Jp-PJl"/>
+                            <constraint firstItem="xcb-g4-TdY" firstAttribute="trailing" secondItem="RGG-5q-e0u" secondAttribute="trailing" constant="56" id="guP-h0-ZGq"/>
                             <constraint firstItem="uTZ-sR-2jE" firstAttribute="top" secondItem="OY0-3h-h1Y" secondAttribute="top" id="kDy-87-unW"/>
+                            <constraint firstItem="bhx-pj-J0G" firstAttribute="trailing" secondItem="xcb-g4-TdY" secondAttribute="trailing" id="sds-Tc-KuJ"/>
                             <constraint firstItem="uTZ-sR-2jE" firstAttribute="trailing" secondItem="xcb-g4-TdY" secondAttribute="trailing" id="w9N-17-Ugc"/>
                         </constraints>
                     </view>
@@ -187,6 +191,8 @@
                         <outlet property="collectionView" destination="bhx-pj-J0G" id="Rqw-5x-a7h"/>
                         <outlet property="editButton" destination="Mow-Ns-03c" id="0au-fY-cZ2"/>
                         <outlet property="filterButton" destination="RGG-5q-e0u" id="hl2-qy-52b"/>
+                        <segue destination="Jvx-X9-fGb" kind="show" identifier="toFilterViewController" id="FnN-09-avS"/>
+                        <segue destination="6vR-kX-cKi" kind="show" identifier="toEditVIewController" id="zrE-s7-Jd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gp5-O0-2AT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -526,6 +532,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cpi-bC-H7e">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
