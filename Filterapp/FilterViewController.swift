@@ -108,10 +108,6 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
       
      }
     }
-    
-    @IBAction func back(){
-          self.dismiss(animated: true, completion: nil)
-      }
         
     @IBAction func savePhoto(){
         for i in 0..<imageArray.count{

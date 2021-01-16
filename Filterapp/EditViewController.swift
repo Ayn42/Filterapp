@@ -220,10 +220,6 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
       }
     }
     
-    @IBAction func back(){
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func savePhoto(){
            for i in 0..<imageArray.count{
             UIImageWriteToSavedPhotosAlbum(imageArray[i], nil, nil, nil)
