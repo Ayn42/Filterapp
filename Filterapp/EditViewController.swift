@@ -34,6 +34,7 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
     var shadowFilter : [CIFilter] = [CIFilter]()
     var contrustFilter : [CIFilter] = [CIFilter]()
     let images = UIImage(named: "imageArray")
+    
 
     var context : CIContext!
     var context2 : CIContext!
@@ -224,5 +225,9 @@ class EditViewController: UIViewController,UICollectionViewDelegate, UICollectio
            for i in 0..<imageArray.count{
             UIImageWriteToSavedPhotosAlbum(imageArray[i], nil, nil, nil)
           }
+        let alert = UIAlertController(title: "画像を保存しました", message: "画像はカメラロールに保存されました", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
        }
+    
 }
