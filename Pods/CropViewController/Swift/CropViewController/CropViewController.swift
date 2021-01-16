@@ -1,7 +1,7 @@
 //
 //  CropViewController.swift
 //
-//  Copyright 2017-2018 Timothy Oliver. All rights reserved.
+//  Copyright 2017-2020 Timothy Oliver. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -19,6 +19,10 @@
 //  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 //  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 //  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+#if canImport(TOCropViewController)
+import TOCropViewController
+#endif
 
 /**
  An enum containing all of the aspect ratio presets that this view controller supports
@@ -258,6 +262,26 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
     
     /**
+     When enabled, hides the 'Done' button on the toolbar.
+
+     Default is false.
+     */
+    public var doneButtonHidden: Bool {
+        set { toCropViewController.doneButtonHidden = newValue }
+        get { return toCropViewController.doneButtonHidden }
+    }
+    
+    /**
+     When enabled, hides the 'Cancel' button on the toolbar.
+
+     Default is false.
+     */
+    public var cancelButtonHidden: Bool {
+        set { toCropViewController.cancelButtonHidden = newValue }
+        get { return toCropViewController.cancelButtonHidden }
+    }
+
+    /**
      If `showActivitySheetOnDone` is true, then these activity items will
      be supplied to that UIActivityViewController in addition to the
      `TOActivityCroppedImageProvider` object.
@@ -285,6 +309,15 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     public var excludedActivityTypes: [UIActivity.ActivityType]? {
         set { toCropViewController.excludedActivityTypes = newValue }
         get { return toCropViewController.excludedActivityTypes }
+    }
+    
+    /**
+     An array of `TOCropViewControllerAspectRatioPreset` enum values denoting which
+     aspect ratios the crop view controller may display (Default is nil. All are shown)
+     */
+    public var allowedAspectRatios: [CropViewControllerAspectRatioPreset]? {
+        set { toCropViewController.allowedAspectRatios = newValue?.map { NSNumber(value: $0.rawValue) } }
+        get { return toCropViewController.allowedAspectRatios?.compactMap { CropViewControllerAspectRatioPreset(rawValue: $0.intValue) } }
     }
     
     /**
@@ -374,6 +407,34 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
         set { toCropViewController.cancelButtonTitle = newValue }
         get { return toCropViewController.cancelButtonTitle }
     }
+
+    /**
+    If true, button icons are visible in portairt instead button text.
+
+    Default is NO.
+    */
+    public var showOnlyIcons: Bool {
+        set { toCropViewController.showOnlyIcons = newValue }
+        get { return toCropViewController.showOnlyIcons }
+    }
+
+    /**
+    Color for the 'Done' button.
+    Setting this will override the default color.
+    */
+    public var doneButtonColor: UIColor? {
+        set { toCropViewController.doneButtonColor = newValue }
+        get { return toCropViewController.doneButtonColor }
+    }
+    
+    /**
+    Color for the 'Cancel' button.
+    Setting this will override the default color.
+    */
+    public var cancelButtonColor: UIColor? {
+        set { toCropViewController.cancelButtonColor = newValue }
+        get { return toCropViewController.cancelButtonColor }
+    }
     
     /**
      This class internally manages and abstracts access to a `TOCropViewController` instance
@@ -457,6 +518,13 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
         super.viewDidLayoutSubviews()
         toCropViewController.view.frame = view.bounds
         toCropViewController.viewDidLayoutSubviews()
+    }
+
+    /**
+     Commits the crop action as if user pressed done button in the bottom bar themself
+     */
+    public func commitCurrentCrop() {
+        toCropViewController.commitCurrentCrop()
     }
     
     /**
@@ -574,26 +642,30 @@ extension CropViewController {
         }
         
         if delegate.responds(to: #selector(CropViewControllerDelegate.cropViewController(_:didCropImageToRect:angle:))) {
-            self.onDidCropImageToRect = {[unowned self] rect, angle in
-                delegate.cropViewController!(self, didCropImageToRect: rect, angle: angle)
+            self.onDidCropImageToRect = {[weak self] rect, angle in
+                guard let strongSelf = self else { return }
+                delegate.cropViewController!(strongSelf, didCropImageToRect: rect, angle: angle)
             }
         }
         
         if delegate.responds(to: #selector(CropViewControllerDelegate.cropViewController(_:didCropToImage:withRect:angle:))) {
-            self.onDidCropToRect = {[unowned self] image, rect, angle in
-                delegate.cropViewController!(self, didCropToImage: image, withRect: rect, angle: angle)
+            self.onDidCropToRect = {[weak self] image, rect, angle in
+                guard let strongSelf = self else { return }
+                delegate.cropViewController!(strongSelf, didCropToImage: image, withRect: rect, angle: angle)
             }
         }
         
         if delegate.responds(to: #selector(CropViewControllerDelegate.cropViewController(_:didCropToCircularImage:withRect:angle:))) {
-            self.onDidCropToCircleImage = {[unowned self] image, rect, angle in
-                delegate.cropViewController!(self, didCropToCircularImage: image, withRect: rect, angle: angle)
+            self.onDidCropToCircleImage = {[weak self] image, rect, angle in
+                guard let strongSelf = self else { return }
+                delegate.cropViewController!(strongSelf, didCropToCircularImage: image, withRect: rect, angle: angle)
             }
         }
         
         if delegate.responds(to: #selector(CropViewControllerDelegate.cropViewController(_:didFinishCancelled:))) {
-            self.onDidFinishCancelled = {[unowned self] finished in
-                delegate.cropViewController!(self, didFinishCancelled: finished)
+            self.onDidFinishCancelled = {[weak self] finished in
+                guard let strongSelf = self else { return }
+                delegate.cropViewController!(strongSelf, didFinishCancelled: finished)
             }
         }
     }

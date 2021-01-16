@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,30 +23,23 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8sD-rT-fiC"/>
-                                    <constraint firstAttribute="width" constant="375" id="fMa-1a-x1o"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="40"/>
                                 <color key="textColor" name="StartEditButtonColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGS-HB-DYl">
-                                <rect key="frame" x="137" y="614" width="140" height="60"/>
-                                <color key="backgroundColor" name="StartEditButtonColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGS-HB-DYl">
+                                <rect key="frame" x="87" y="602" width="240" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3645758596407313" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GTC-Y4-L1o"/>
-                                    <constraint firstAttribute="width" constant="140" id="yEZ-1a-zzf"/>
+                                    <constraint firstAttribute="width" constant="240" id="yIk-Wm-ZSD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="24"/>
                                 <state key="normal" title="Start Edit">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="StartEditButtonColor"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="uLz-DN-eJ8" kind="presentation" modalPresentationStyle="fullScreen" id="Jf9-e7-QkK"/>
                                 </connections>
@@ -63,12 +56,15 @@
                             <constraint firstItem="u46-lK-30C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gO6-yT-FyR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="IGS-HB-DYl" id="npt-y9-hcX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="117.1875"/>
+            <point key="canvasLocation" x="471" y="115"/>
         </scene>
-        <!--Make View Controller-->
+        <!--Choose Photos-->
         <scene sceneID="o9s-ej-cQP">
             <objects>
                 <viewController id="L9W-cA-16r" customClass="MakeViewController" customModule="Filterapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -123,11 +119,6 @@
                                 <state key="normal" title="Filter">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="filterButtonPressed" destination="L9W-cA-16r" eventType="touchUpInside" id="mbN-DZ-EFc"/>
                                 </connections>
@@ -142,11 +133,6 @@
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="editButtonPressed" destination="L9W-cA-16r" eventType="touchUpInside" id="TOF-Q4-O6M"/>
                                 </connections>
@@ -175,7 +161,7 @@
                             <constraint firstItem="uTZ-sR-2jE" firstAttribute="trailing" secondItem="xcb-g4-TdY" secondAttribute="trailing" id="w9N-17-Ugc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bHv-YC-Krl">
+                    <navigationItem key="navigationItem" title="Choose Photos" id="bHv-YC-Krl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qUP-4t-wps">
                             <connections>
                                 <action selector="back" destination="L9W-cA-16r" id="tsU-ap-j9i"/>
@@ -192,14 +178,14 @@
                         <outlet property="editButton" destination="Mow-Ns-03c" id="0au-fY-cZ2"/>
                         <outlet property="filterButton" destination="RGG-5q-e0u" id="hl2-qy-52b"/>
                         <segue destination="Jvx-X9-fGb" kind="show" identifier="toFilterViewController" id="FnN-09-avS"/>
-                        <segue destination="6vR-kX-cKi" kind="show" identifier="toEditVIewController" id="zrE-s7-Jd3"/>
+                        <segue destination="6vR-kX-cKi" kind="show" identifier="toEditViewController" id="zrE-s7-Jd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gp5-O0-2AT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2000.0000000000002" y="114.50892857142857"/>
         </scene>
-        <!--Filter View Controller-->
+        <!--Filter-->
         <scene sceneID="uiT-Fm-lCB">
             <objects>
                 <viewController id="Jvx-X9-fGb" customClass="FilterViewController" customModule="Filterapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,41 +196,39 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Primary backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="L08-E9-HsH">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agL-Ga-bDn">
-                                <rect key="frame" x="164" y="710" width="86" height="85"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agL-Ga-bDn">
+                                <rect key="frame" x="163" y="714" width="88" height="88"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="F 2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="3Hh-l5-qSM"/>
+                                    <constraint firstAttribute="height" constant="88" id="hEC-Lu-4LB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                <state key="normal" title="Sepia">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="Filter2" destination="Jvx-X9-fGb" eventType="touchUpInside" id="Yaq-1b-sYz"/>
+                                    <action selector="Filter2" destination="Jvx-X9-fGb" eventType="touchUpInside" id="9jM-hM-s74"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8du-ss-1sI">
-                                <rect key="frame" x="282" y="710" width="86" height="89"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8du-ss-1sI">
+                                <rect key="frame" x="290" y="714" width="88" height="88"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="F 3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="sI0-Kl-rzw"/>
+                                    <constraint firstAttribute="height" constant="88" id="zy7-AC-BdZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                <state key="normal" title="B/W">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="Filter3" destination="Jvx-X9-fGb" eventType="touchUpInside" id="iJw-Nw-SGn"/>
+                                    <action selector="Filter3" destination="Jvx-X9-fGb" eventType="touchUpInside" id="aPN-Kz-L6N"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yy3-fX-hvT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="563"/>
-                                <color key="backgroundColor" name="Primary backgroundcolor"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="523"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Na-2H-DKM">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -275,27 +259,26 @@
                                     <outlet property="delegate" destination="Jvx-X9-fGb" id="IdS-js-gBu"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNz-Bi-A6M">
-                                <rect key="frame" x="34" y="710" width="92" height="89"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNz-Bi-A6M">
+                                <rect key="frame" x="36" y="714" width="88" height="88"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="F 1">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="NfO-jz-kxy"/>
+                                    <constraint firstAttribute="width" constant="88" id="f5k-fz-oli"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                <state key="normal" title="Bright">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="Filter1" destination="Jvx-X9-fGb" eventType="touchUpInside" id="EnM-sd-eSX"/>
+                                    <action selector="Filter1" destination="Jvx-X9-fGb" eventType="touchUpInside" id="G4g-ej-m47"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uBN-ks-hXB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uBN-ks-hXB" firstAttribute="trailing" secondItem="8du-ss-1sI" secondAttribute="trailing" constant="60" id="InI-EO-h9l"/>
+                            <constraint firstItem="uBN-ks-hXB" firstAttribute="trailing" secondItem="8du-ss-1sI" secondAttribute="trailing" constant="36" id="InI-EO-h9l"/>
                             <constraint firstItem="agL-Ga-bDn" firstAttribute="centerX" secondItem="N1S-r5-KPc" secondAttribute="centerX" id="KPj-O5-eJG"/>
                             <constraint firstItem="uBN-ks-hXB" firstAttribute="bottom" secondItem="8du-ss-1sI" secondAttribute="bottom" constant="60" id="Kmb-gC-KHr"/>
                             <constraint firstAttribute="bottom" secondItem="L08-E9-HsH" secondAttribute="bottom" id="Nno-Sc-EzL"/>
@@ -307,11 +290,11 @@
                             <constraint firstItem="uBN-ks-hXB" firstAttribute="bottom" secondItem="agL-Ga-bDn" secondAttribute="bottom" constant="60" id="idE-dO-va9"/>
                             <constraint firstItem="L08-E9-HsH" firstAttribute="top" secondItem="N1S-r5-KPc" secondAttribute="top" id="l7Q-sw-eAD"/>
                             <constraint firstItem="Yy3-fX-hvT" firstAttribute="leading" secondItem="uBN-ks-hXB" secondAttribute="leading" id="mij-Xs-jpW"/>
-                            <constraint firstItem="vNz-Bi-A6M" firstAttribute="leading" secondItem="uBN-ks-hXB" secondAttribute="leading" constant="60" id="pcQ-KU-szb"/>
+                            <constraint firstItem="vNz-Bi-A6M" firstAttribute="leading" secondItem="uBN-ks-hXB" secondAttribute="leading" constant="36" id="pcQ-KU-szb"/>
                             <constraint firstItem="uBN-ks-hXB" firstAttribute="bottom" secondItem="vNz-Bi-A6M" secondAttribute="bottom" constant="60" id="tzt-CW-huN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NxZ-7S-JmR">
+                    <navigationItem key="navigationItem" title="Filter" id="NxZ-7S-JmR">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="dIr-uB-bbe">
                             <connections>
                                 <action selector="savePhoto" destination="Jvx-X9-fGb" id="D5H-g0-rbk"/>
@@ -319,14 +302,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="brightButton" destination="vNz-Bi-A6M" id="i5p-2s-Sod"/>
+                        <outlet property="bwButton" destination="8du-ss-1sI" id="i7t-hC-5qq"/>
                         <outlet property="collectionView" destination="Yy3-fX-hvT" id="mBB-X3-xQK"/>
+                        <outlet property="sepiaButton" destination="agL-Ga-bDn" id="kky-EX-QB5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFU-1e-STc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3113.04347826087" y="-156.02678571428569"/>
         </scene>
-        <!--Edit View Controller-->
+        <!--Retouch-->
         <scene sceneID="ur8-Xw-ycc">
             <objects>
                 <viewController id="6vR-kX-cKi" customClass="EditViewController" customModule="Filterapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,7 +325,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9wC-VU-Fjm">
                                 <rect key="frame" x="0.0" y="88" width="414" height="523.5"/>
-                                <color key="backgroundColor" name="Primary backgroundcolor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XeH-Nq-qvF">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -499,7 +485,7 @@
                             <constraint firstItem="Cbe-DF-zan" firstAttribute="leading" secondItem="lJX-Zf-3xb" secondAttribute="leading" constant="10" id="u4a-WF-VD4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yt4-3i-oTV">
+                    <navigationItem key="navigationItem" title="Retouch" id="yt4-3i-oTV">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="IzR-ni-lcK">
                             <connections>
                                 <action selector="savePhoto" destination="6vR-kX-cKi" id="Dei-cR-WYA"/>
@@ -541,14 +527,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Em-RM-WRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089.8550724637682" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1241" y="115"/>
         </scene>
     </scenes>
     <resources>
         <image name="Primary backgroundimage" width="667" height="1000"/>
-        <namedColor name="Primary backgroundcolor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="StartEditButtonColor">
             <color red="1" green="1" blue="1" alpha="0.64999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

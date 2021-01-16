@@ -14,18 +14,22 @@ class MakeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet var filterButton : UIButton! {
         didSet {
-            filterButton.layer.cornerRadius = 16
-            filterButton.layer.shadowColor = UIColor.black.cgColor
-            filterButton.layer.shadowRadius = 20
-            filterButton.layer.shadowOpacity = 0.1
+//            filterButton.layer.cornerRadius = 16
+//            filterButton.layer.shadowColor = UIColor.black.cgColor
+//            filterButton.layer.shadowRadius = 20
+//            filterButton.layer.shadowOpacity = 0.1
+            filterButton.layer.borderWidth = 1
+            filterButton.layer.borderColor = UIColor.black.cgColor
         }
     }
     @IBOutlet var editButton : UIButton! {
         didSet {
-            editButton.layer.cornerRadius = 16
-            editButton.layer.shadowColor = UIColor.black.cgColor
-            editButton.layer.shadowRadius = 20
-            editButton.layer.shadowOpacity = 0.1
+//            editButton.layer.cornerRadius = 16
+//            editButton.layer.shadowColor = UIColor.black.cgColor
+//            editButton.layer.shadowRadius = 20
+//            editButton.layer.shadowOpacity = 0.1
+            editButton.layer.borderWidth = 1
+            editButton.layer.borderColor = UIColor.black.cgColor
         }
     }
     @IBOutlet var collectionView : UICollectionView!

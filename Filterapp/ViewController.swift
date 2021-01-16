@@ -18,6 +18,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     var playerLayer:AVPlayerLayer!
     var queuePlayer: AVQueuePlayer?
 
+    @IBOutlet private weak var startButton: UIButton! {
+        didSet {
+            startButton.layer.borderWidth = 1
+            startButton.layer.borderColor = UIColor.white.cgColor
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
